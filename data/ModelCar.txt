@@ -1,0 +1,52 @@
+0;Toyota;continue
+1;Ford Mustang;see
+2;Bentley;fly
+3;Ferrari;fly
+4;Honda;continue
+5;Porsche;situation
+6;Bentley;baby
+7;Toyota;foreign
+8;Toyota;pattern
+9;Mazda;store
+10;Subaru;Democrat
+11;Chrysler;start
+12;Cadillac;structure
+13;Teslt;little
+14;Honda;draw
+15;Honda;pattern
+16;Bentley;sound
+17;Lamborgini;community
+18;Audi;offer
+19;Audi;structure
+20;Maserati;eye
+21;Jaguar;memory
+22;Maserati;draw
+23;Porsche;memory
+24;Ferrari;close
+25;Jaguar;message
+26;Ford;situation
+27;Honda;store
+28;Ford Mustang;religious
+29;Ford Mustang;center
+30;Maserati;message
+31;Mazda;Democrat
+32;Maserati;protect
+33;Bentley;approach
+34;Subaru;go
+35;Audi;continue
+36;Jaguar;consumer
+37;Ford Mustang;left
+38;Ford Mustang;sound
+39;Jaguar;center
+40;Maserati;white
+41;Honda;close
+42;Ferrari;fly
+43;BMW;star
+44;Jeep;protect
+45;Maserati;work
+46;Audi;want
+47;Subaru;pattern
+48;Mazda;center
+49;Toyota;reality
+50;Audi;reality
+51;Porsche;Democrat
