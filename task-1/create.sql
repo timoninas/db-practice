@@ -1,53 +1,45 @@
-IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'LR1')
-	DROP DATABASE LR1
+IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'CS')
+	DROP DATABASE CS
 
-CREATE DATABASE LR1
+CREATE DATABASE CS
 
 GO
 
-CREATE TABLE LR1.dbo.Company(
-CompanyID int NOT NULL,
-CompanyName VARCHAR(80) NOT NULL,
-YearFoundation int NOT NULL,
-Country VARCHAR(80) NOT NULL
+CREATE TABLE CS.dbo.Contracts(
+id int NOT NULL,
+id_car int NOT NULL,
+id_person int NOT NULL,
+id_service int NOT NULL
 )
 
-CREATE TABLE LR1.dbo.FilmDirector(
-FilmDirectorID int NOT NULL,
-NameDirector VARCHAR(50) NOT NULL,
-DateBirth date NOT NULL,
-Height int NOT NULL
+CREATE TABLE CS.dbo.Person(
+id int NOT NULL,
+pname VARCHAR(100) NOT NULL,
+plastname VARCHAR(100) NOT NULL,
+pgender VARCHAR(100) NOT NULL,
+paddress VARCHAR(100) NOT NULL,
+pphone VARCHAR(100) NOT NULL,
+pemail VARCHAR(100) NOT NULL
 )
 
-CREATE TABLE LR1.dbo.Film(
-FilmID int NOT NULL,
-FilmName VARCHAR(40) NOT NULL,
-ReleaseYear int NOT NULL,
-Country VARCHAR(80) NOT NULL,
-FilmDirectorID int NOT NULL,
-CompanyID int NOT NULL,
-GenreID int NOT NULL,
-PrequelID int,
-DurationMin int NOT NULL,
-AgeLimit int NOT NULL
+CREATE TABLE CS.dbo.Serviec(
+id int NOT NULL,
+saddress VARCHAR(100) NOT NULL,
+slongitude float NOT NULL,
+slatitude float NOT NULL
 )
 
-CREATE TABLE LR1.dbo.Film_Actor(
-    Film_ActorID int NOT NULL,
-	FilmID int NOT NULL,
-	ActorID int NOT NULL
+CREATE TABLE CS.dbo.Car(
+id int NOT NULL,
+id_cmodel int NOT NULL,
+ccolor VARCHAR(100) NOT NULL,
+cnumber VARCHAR(100) NOT NULL
 )
 
-CREATE TABLE LR1.dbo.Actor(
-    ActorID int NOT NULL,
-	NameDirector VARCHAR(50) NOT NULL,
-	DateBirth date NOT NULL,
-	Country VARCHAR(80) NOT NULL,
-	Height int NOT NULL
-)
 
-CREATE TABLE LR1.dbo.Genre(
-    GenreID int NOT NULL,
-	TypeGenre VARCHAR(50) NOT NULL
+CREATE TABLE CS.dbo.ModelCar(
+id int NOT NULL,
+mcbrand VARCHAR(100) NOT NULL,
+mcmodel VARCHAR(100) NOT NULL
 )
 
