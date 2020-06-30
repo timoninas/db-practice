@@ -1,12 +1,14 @@
 use CS
 use CS2
 
-SELECT * FROM Contracts
-SELECT * FROM Person
-SELECT * FROM PersonInfo
-SELECT * FROM Serviec
-SELECT * FROM Car
-SELECT * FROM ModelCar
+SELECT * FROM Contracts;
+SELECT * FROM Person;
+SELECT * FROM PersonInfo;
+SELECT * FROM Serviec;
+SELECT * FROM Car;
+SELECT * FROM ModelCar;
+SELECT * FROM Equipment;
+SELECT * FROM CS.dbo.Message;
 
 -- -- -- -- --  -- -- 
 -- -  COMMENTY   - --

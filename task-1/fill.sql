@@ -23,3 +23,10 @@ BULK INSERT CS.dbo.Contracts FROM '\\Mac\Home\Desktop\Практика\data\Contract.txt
 WITH
 (DATAFILETYPE = 'char', FIELDTERMINATOR = ';', ROWTERMINATOR = '\n', check_constraints);
 
+BULK INSERT CS.dbo.Equipment FROM '\\Mac\Home\Desktop\Практика\data\Equipment.txt'
+WITH
+(DATAFILETYPE = 'char', FIELDTERMINATOR = ';', ROWTERMINATOR = '\n', check_constraints);
+
+BULK INSERT CS.dbo.Message FROM '\\Mac\Home\Desktop\Практика\data\Message.txt'
+WITH
+(DATAFILETYPE = 'char', FIELDTERMINATOR = ';', ROWTERMINATOR = '\n', check_constraints);

@@ -39,6 +39,7 @@ slatitude float NOT NULL
 
 CREATE TABLE CS.dbo.Car(
 id int NOT NULL,
+id_equipment int NOT NULL,
 id_cmodel int NOT NULL,
 ccolor VARCHAR(100) NOT NULL,
 cnumber VARCHAR(100) NOT NULL
@@ -49,4 +50,17 @@ CREATE TABLE CS.dbo.ModelCar(
 id int NOT NULL,
 mcbrand VARCHAR(100) NOT NULL,
 mcmodel VARCHAR(100) NOT NULL
+)
+
+CREATE TABLE CS.dbo.Equipment(
+id int NOT NULL,
+emei VARCHAR(100) NOT NULL,
+date_end_maintenance date NOT NULL
+)
+
+CREATE TABLE CS.dbo.Message(
+id int NOT NULL,
+id_equipment int NOT NULL,
+date_with_date datetime NOT NULL,
+value_json VARCHAR(300) NOT NULL
 )
