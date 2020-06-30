@@ -1,9 +1,9 @@
 from faker import Faker
 import random
 
-myFaker = Faker("ru_RU")
+myFaker = Faker('en_US')
 
-f = open('/Users/antontimonin/Desktop/Практика/data/Service.txt', 'w')
+f = open('/Users/antontimonin/Desktop/Практика/data/Service1.txt', 'w')
 
 diaposon = 15
 

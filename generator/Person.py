@@ -1,11 +1,13 @@
 from faker import Faker
 import random
 
-myFaker = Faker("ru_RU")
+myFaker = Faker('en_US')
 
-f = open('/Users/antontimonin/Desktop/Практика/data/Person.txt', 'w', encoding='utf-8')
+f = open('/Users/antontimonin/Desktop/Практика/data/Person1.txt', 'w', encoding='utf-8')
 
 diaposon = 250
+
+existings_id = []
 
 for i in range(diaposon):
     number = myFaker.pyint(min_value=0, max_value=12, step=1)
@@ -14,7 +16,14 @@ for i in range(diaposon):
     if number % 3 == 0:
         gender = "female"
 
-    f.write(str(i) + ';') #film id
+    f.write(str(i) + ';')
+
+    while(1):
+        num = myFaker.pyint(min_value=0, max_value=diaposon, step=1)
+        if num not in existings_id:
+            existings_id.append(num)
+            f.write(str(num) + ';')
+            break
 
     if gender == "male":
         f.write(myFaker.first_name_male() + ';')
@@ -24,9 +33,6 @@ for i in range(diaposon):
         f.write(myFaker.last_name_female() + ';')
 
     f.write(gender + ';')
-    f.write(myFaker.address() + ';')
-    f.write(myFaker.phone_number() + ';')
-    f.write(myFaker.email())
 
     f.write('\n')
 

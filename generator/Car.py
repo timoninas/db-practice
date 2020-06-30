@@ -3,14 +3,20 @@ import random
 
 myFaker = Faker("en_US")
 
-f = open('/Users/antontimonin/Desktop/Практика/data/Car.txt', 'w')
+f = open('/Users/antontimonin/Desktop/Практика/data/Car1.txt', 'w')
 
 diaposon = 350
 
-#1895
+id_equipment = []
 
 for i in range(diaposon):
     f.write(str(i) + ';')
+    while(1):
+        id_equip = myFaker.pyint(min_value=0, max_value=450, step=1)
+        if id_equip not in id_equipment:
+            id_equipment.append(id_equip)
+            f.write(str(id_equip) + ';')
+            break
     f.write(str(myFaker.pyint(min_value=0, max_value=49, step=1)) + ';')
     
     f.write(myFaker.color_name() + ';')
@@ -21,8 +27,5 @@ for i in range(diaposon):
 
     f.write(word1 + myFaker.credit_card_security_code() + word2 + word3)
     f.write('\n')
-
-
-#/Users/antontimonin/Desktop
 
 f.close()

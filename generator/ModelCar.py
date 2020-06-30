@@ -1,9 +1,9 @@
 from faker import Faker
 import random
 
-myFaker = Faker()
+myFaker = Faker('en_US')
 
-f = open('/Users/antontimonin/Desktop/Практика/data/ModelCar.txt', 'w')
+f = open('/Users/antontimonin/Desktop/Практика/data/ModelCar1.txt', 'w')
 
 diaposon = 52
 
