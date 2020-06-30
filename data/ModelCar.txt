@@ -1,52 +1,52 @@
-0;Toyota;continue
-1;Ford Mustang;see
-2;Bentley;fly
-3;Ferrari;fly
-4;Honda;continue
-5;Porsche;situation
-6;Bentley;baby
-7;Toyota;foreign
-8;Toyota;pattern
-9;Mazda;store
-10;Subaru;Democrat
-11;Chrysler;start
-12;Cadillac;structure
-13;Teslt;little
-14;Honda;draw
-15;Honda;pattern
-16;Bentley;sound
-17;Lamborgini;community
-18;Audi;offer
-19;Audi;structure
-20;Maserati;eye
-21;Jaguar;memory
-22;Maserati;draw
-23;Porsche;memory
-24;Ferrari;close
-25;Jaguar;message
-26;Ford;situation
-27;Honda;store
-28;Ford Mustang;religious
-29;Ford Mustang;center
-30;Maserati;message
-31;Mazda;Democrat
-32;Maserati;protect
-33;Bentley;approach
-34;Subaru;go
-35;Audi;continue
-36;Jaguar;consumer
-37;Ford Mustang;left
-38;Ford Mustang;sound
-39;Jaguar;center
-40;Maserati;white
-41;Honda;close
-42;Ferrari;fly
-43;BMW;star
-44;Jeep;protect
-45;Maserati;work
-46;Audi;want
-47;Subaru;pattern
-48;Mazda;center
-49;Toyota;reality
-50;Audi;reality
-51;Porsche;Democrat
+0;Ford;follow
+1;Ford Mustang;Republican
+2;Lamborgini;assume
+3;Teslt;current
+4;Ford Mustang;because
+5;Ford;wrong
+6;BMW;week
+7;Honda;treatment
+8;Jeep;dinner
+9;Bentley;draw
+10;BMW;assume
+11;Chrysler;because
+12;Audi;father
+13;Cadillac;point
+14;Maserati;shake
+15;Subaru;half
+16;Porsche;thus
+17;Bentley;well
+18;Teslt;woman
+19;Teslt;share
+20;Audi;organization
+21;Subaru;Republican
+22;Chrysler;point
+23;Chrysler;woman
+24;Bentley;paper
+25;Audi;shake
+26;Subaru;reduce
+27;Jeep;establish
+28;Ford Mustang;treatment
+29;Toyota;assume
+30;Chrysler;land
+31;Ford;brother
+32;Maserati;against
+33;Toyota;well
+34;Ford Mustang;current
+35;Porsche;tree
+36;BMW;wrong
+37;Bentley;father
+38;Honda;follow
+39;Ford;force
+40;Lamborgini;because
+41;Chrysler;my
+42;Subaru;point
+43;Ford Mustang;what
+44;BMW;discuss
+45;Teslt;wear
+46;Jeep;or
+47;Mazda;well
+48;Lamborgini;despite
+49;Cadillac;television
+50;Chrysler;hundred
+51;Cadillac;reduce
