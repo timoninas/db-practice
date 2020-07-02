@@ -4,8 +4,8 @@ SELECT * FROM CS.dbo.Equipment;
 SELECT * FROM CS.dbo.Message;
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - --
--- По id оборудования выводит все сообщения, которые --
--- когда либо приходили на это оборудование          --
+-- Displays all messages that have ever been sent to --
+-- this hardware by the hardware id                  --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - --
 
 DROP FUNCTION GetMessageByEquipmentID;
@@ -24,9 +24,9 @@ RETURN
 SELECT * FROM GetMessageByEquipmentID(100) as getm ORDER BY getm.date_with_time DESC;
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - --
--- по id клиента достает всю инфу из json пришедшую на оборудование --
--- привязанное к определенному клиенту и вывести сообщения, которые -- 
--- пришли за последние 30 дней                                      --
+-- Using the client id, it retrieves all the information from json  --
+-- that came to the hardware linked to a particular client and      --
+-- displays messages that came in the last 30 days                  --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - --
 
 SELECT json_value(m.value_json, '$.id_message') as id_message,
