@@ -14,7 +14,6 @@ date_start date not null,
 date_end date not null
 )
 
-
 CREATE TABLE CS.dbo.Person(
 id int NOT NULL,
 id_personinfo int NOT NULL,
@@ -62,5 +61,36 @@ CREATE TABLE CS.dbo.Message(
 id int NOT NULL,
 id_equipment int NOT NULL,
 date_with_date datetime NOT NULL,
-value_json VARCHAR(300) NOT NULL
+value_json VARCHAR(500) NOT NULL
 )
+
+CREATE TABLE CS.dbo.CheckPrimary(
+id int NOT NULL,
+name VARCHAR(50) NOT NULL,
+CONSTRAINT PK_Check PRIMARY KEY(id),
+CONSTRAINT UK_Check UNIQUE(id),
+)
+
+
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- CHECK unique, primary key, foreign key --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+CREATE TABLE CS.dbo.CheckForeign(
+id int NOT NULL,
+id_CheckPrimary int NOT NULL,
+name VARCHAR(50) NOT NULL,
+CONSTRAINT PK_CheckF PRIMARY KEY(id),
+CONSTRAINT UK_CheckF UNIQUE(id),
+CONSTRAINT FK_id_CheckForeign FOREIGN KEY(id_CheckPrimary) REFERENCES CheckPrimary(id)
+)
+
+INSERT INTO CS.dbo.CheckPrimary(id, name)
+VALUES (2, 'What');
+
+INSERT INTO CS.dbo.CheckForeign(id, id_CheckPrimary, name)
+VALUES (1, 2, 'What');
+
+SELECT * FROM CS.dbo.CheckPrimary;
