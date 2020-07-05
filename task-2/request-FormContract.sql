@@ -71,26 +71,38 @@ BEGIN
 
 END;
 
-exec FormContract 'Kiram', 'Abdulelam', 'Black', 'email@mail.ru', 'BMW', 'week', 'Red', 'TT777T777';
+exec FormContract 'Kiram', 'Abdulelam', 'Black', 'email@mail.ru', 'BMW', 'wnnek', 'Blueaa', 'TT777T777';
+
+exec DeleteExtraCells;
 
 SELECT * from CS.dbo.ModelCar;
 SELECT * FROM CS.dbo.Car;
 SELECT * FROM CS.dbo.Contracts;
 SELECT * FROM CS.dbo.PersonInfo;
-
-DELETE FROM CS.dbo.Contracts
-WHERE CS.dbo.Contracts.id > 1000;
-
-DELETE FROM CS.dbo.Person
-WHERE CS.dbo.Person.id > 249;
-
-DELETE FROM CS.dbo.PersonInfo
-WHERE CS.dbo.PersonInfo.id > 249;
-
-DELETE FROM CS.dbo.Car
-WHERE CS.dbo.Car.id > 349;
-
 SELECT * FROM CS.dbo.PersonInfo as c
 WHERE c.id > 200;
 
 SELECT * FROM CS.dbo.ModelCar;
+
+
+
+-- -- -- -- -- -- -- - --
+-- Delete Extra Cells  --
+-- -- -- -- -- -- -- - --
+DROP PROCEDURE DeleteExtraCells;
+
+CREATE PROCEDURE DeleteExtraCells AS
+BEGIN
+
+	DELETE FROM CS.dbo.Contracts
+	WHERE CS.dbo.Contracts.id > 1000;
+
+	DELETE FROM CS.dbo.Person
+	WHERE CS.dbo.Person.id > 249;
+
+	DELETE FROM CS.dbo.PersonInfo
+	WHERE CS.dbo.PersonInfo.id > 249;
+
+	DELETE FROM CS.dbo.Car
+	WHERE CS.dbo.Car.id > 349;
+END;
