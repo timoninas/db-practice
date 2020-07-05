@@ -8,6 +8,9 @@ f = open('/Users/antontimonin/Desktop/Практика/data/Message1.txt', 'w', 
 
 diaposon = 4500
 
+status_messages = ['Car force opened', 'Car was knocked', 'Car was knocked', 'Car was yanked by the handle', 'Hit the wheels of a car',
+'The trunk was broken into']
+
 def formateDate(year):
     if year >= 0 and year < 10:
         return "0" + str(year)
@@ -21,7 +24,7 @@ for i in range(diaposon):
 
     day = myFaker.pyint(min_value=1, max_value=28, step=1)
     month = myFaker.pyint(min_value=1, max_value=12, step=1)
-    year = myFaker.pyint(min_value=2005, max_value=2020, step=1)
+    year = myFaker.pyint(min_value=2015, max_value=2020, step=1)
 
     datetime = formateDate(year) + "-" + formateDate(month) + "-" + formateDate(day) + "T" 
 
@@ -33,10 +36,16 @@ for i in range(diaposon):
 
     f.write(datetime + ";")
 
+    longitude = float(myFaker.pyint(min_value=49000, max_value=75000, step=1)) / 1000
+
+    latitude = float(myFaker.pyint(min_value=9000, max_value=28000, step=1)) / 1000
+
     personDict = {
-        'message': 'Car force opened',
+        'message': status_messages[myFaker.pyint(min_value=0, max_value=len(status_messages)-1, step=1)],
         'datetime': datetime,
-        'id_equipment': id
+        'id_message': id,
+        'longitude': longitude,
+        'latitude': latitude
     }
     app_json = json.dumps(personDict, sort_keys=True)
     f.write(app_json)

@@ -10,8 +10,12 @@ diaposon = 15
 for i in range(diaposon):
     f.write(str(i) + ';')
     f.write(myFaker.address() + ';')
-    f.write(str(random.randint(0, 900) / 10) + ";")
-    f.write(str(random.randint(0, 900) / 10))
+    
+    longitude = float(myFaker.pyint(min_value=49000, max_value=75000, step=1)) / 1000
+    f.write(str(longitude) + ';')
+
+    latitude = float(myFaker.pyint(min_value=9000, max_value=28000, step=1)) / 1000
+    f.write(str(latitude))
     f.write('\n')
 
 
