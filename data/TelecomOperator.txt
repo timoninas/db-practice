@@ -1,0 +1,7 @@
+0;mtc_tech
+1;megafon_tech
+2;tele2_tech
+3;bilain_tech
+4;yota_tech
+5;tinkoff_tech
+6;vineah_tech
