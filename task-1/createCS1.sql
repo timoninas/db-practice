@@ -44,7 +44,6 @@ ccolor VARCHAR(100) NOT NULL,
 cnumber VARCHAR(100) NOT NULL
 )
 
-
 CREATE TABLE CS.dbo.ModelCar(
 id int NOT NULL,
 mcbrand VARCHAR(100) NOT NULL,
@@ -53,6 +52,7 @@ mcmodel VARCHAR(100) NOT NULL
 
 CREATE TABLE CS.dbo.Equipment(
 id int NOT NULL,
+id_communication_chanel int NOT NULL,
 emei VARCHAR(100) NOT NULL,
 date_end_maintenance date NOT NULL
 )
@@ -64,19 +64,29 @@ date_with_date datetime NOT NULL,
 value_json VARCHAR(500) NOT NULL
 )
 
-CREATE TABLE CS.dbo.CheckPrimary(
+CREATE TABLE CS.dbo.CommunicationChanel (
 id int NOT NULL,
-name VARCHAR(50) NOT NULL,
-CONSTRAINT PK_Check PRIMARY KEY(id),
-CONSTRAINT UK_Check UNIQUE(id),
+id_telecom_operator int NOT NULL,
+name VARCHAR(50) NOT NULL
 )
 
+CREATE TABLE CS.dbo.TelecomOperator (
+id int NOT NULL,
+operator VARCHAR(50) NOT NULL 
+)
 
 
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 -- CHECK unique, primary key, foreign key --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+CREATE TABLE CS.dbo.CheckPrimary(
+id int NOT NULL,
+name VARCHAR(50) NOT NULL,
+CONSTRAINT PK_Check PRIMARY KEY(id),
+CONSTRAINT UK_Check UNIQUE(id),
+)
 
 CREATE TABLE CS.dbo.CheckForeign(
 id int NOT NULL,

@@ -16,3 +16,19 @@ WITH
 (DATAFILETYPE = 'char', FIELDTERMINATOR = ';', ROWTERMINATOR = '\n', check_constraints);
 
 SELECT * FROM CS2.dbo.PersonLoginInfo;
+
+CREATE TABLE CS2.dbo.DealerCenter(
+	id int NOT NULL,
+	address VARCHAR(100) NOT NULL,
+	longitude float NOT NULL,
+	latitude float NOT NULL,
+	value_json VARCHAR(500) NOT NULL,
+)
+
+BULK INSERT CS2.dbo.DealerCenter FROM '\\Mac\Home\Desktop\Практика\data\DealerCenter.txt'
+WITH
+(DATAFILETYPE = 'char', FIELDTERMINATOR = ';', ROWTERMINATOR = '\n', check_constraints);
+
+SELECT * FROM CS2.dbo.DealerCenter;
+
+SELECT * FROM CS.dbo.Message;
