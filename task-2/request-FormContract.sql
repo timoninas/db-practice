@@ -14,7 +14,9 @@ CREATE PROCEDURE FormContract(@person_name VARCHAR(100),
 							  @car_brand VARCHAR(100),
 							  @car_model VARCHAR(100),
 							  @car_color VARCHAR(100),
-							  @car_number VARCHAR(100)) AS
+							  @car_number VARCHAR(100),
+							  @equipment_emei VARCHAR(100),
+							  @operator VARCHAR(100)) AS
 DECLARE 
 	-- Contract
 	@ID_CONTRACT INT,
@@ -28,7 +30,10 @@ DECLARE
 	-- Car
 	@ID_CAR INT,
 	@ID_EQUIPMENT INT,
-	@ID_MODELCAR INT
+	@ID_MODELCAR INT,
+
+	-- Communication Chanel
+	@ID_COMMUNICATION_CHANEL INT
 
 BEGIN
 
@@ -38,10 +43,11 @@ BEGIN
 
 	SELECT @ID_PERSON = MAX(p.id) + 1 FROM CS.dbo.Person as p;
 	SELECT @ID_PERSON_COOP_INFO = MAX(p.id) + 1 FROM CS.dbo.PersonInfo as p;
+	SELECT @ID_COMMUNICATION_CHANEL = MAX(p.id) + 1 FROM CS.dbo.CommunicationChanel as p;
 
 	SELECT @ID_CAR = MAX(c.id) + 1 FROM CS.dbo.Car as c;
 	-- SELECT @ID_EQUIPMENT = MAX(eq.id) + 1 FROM CS.dbo.Equipment as eq;
-	SELECT @ID_EQUIPMENT = 0;
+	SELECT @ID_EQUIPMENT = MAX(e.id) + 1 FROM CS.dbo.Equipment as e;
 	SELECT @ID_MODELCAR = 0;
 
 	-- Add in Contracts table
@@ -65,26 +71,30 @@ BEGIN
 	INSERT INTO CS.dbo.ModelCar(id, mcbrand, mcmodel)
 	VALUES (@ID_MODELCAR, @car_brand, @car_model);
 
+	-- Add in Equipment table
+	INSERT INTO CS.dbo.Equipment(id, id_communication_chanel, date_end_maintenance, emei)
+	VALUES (@ID_EQUIPMENT, @ID_COMMUNICATION_CHANEL, @DATE_END, @equipment_emei);
+
+	EXEC AddNewCommunicationChanel @operator;
+
 	-- Add in Car table
 	INSERT INTO CS.dbo.Car(id, id_equipment, id_cmodel, ccolor, cnumber)
 	VALUES (@ID_CAR, @ID_EQUIPMENT, @ID_MODELCAR, @car_color, @car_number);
 
 END;
 
-exec FormContract 'Kiram', 'Abdulelam', 'Black', 'email@mail.ru', 'BMW', 'wnnek', 'Blueaa', 'TT777T777';
+exec FormContract 'Kiram', 'Abdulelam', 'Black', 'email@mail.ru', 'BMW', 'X9', 'Blueaa', 'TT777T777', 'JKWNNGKWEJNGKWE', 'Yota';
 
 exec DeleteExtraCells;
 
 SELECT * from CS.dbo.ModelCar;
 SELECT * FROM CS.dbo.Car;
 SELECT * FROM CS.dbo.Contracts;
+SELECT * FROM CS.dbo.Person;
 SELECT * FROM CS.dbo.PersonInfo;
+SELECT * FROM CS.dbo.Equipment;
+SELECT * FROM CS.dbo.CommunicationChanel;
 SELECT * FROM CS.dbo.PersonInfo as c
-WHERE c.id > 200;
-
-SELECT * FROM CS.dbo.ModelCar;
-
-
 
 -- -- -- -- -- -- -- - --
 -- Delete Extra Cells  --
