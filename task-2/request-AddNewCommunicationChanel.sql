@@ -1,9 +1,9 @@
 USE CS;
 
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - --
--- A procedure that will record all the information in the main table with   --
--- contracts. When filling in Person, Service, Car, Contract will be formed  --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- Adding a new entry to the Communication Channel with a dependency -- 
+-- in the Telecom Operator table                                     --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 drop procedure AddNewCommunicationChanel;
 
