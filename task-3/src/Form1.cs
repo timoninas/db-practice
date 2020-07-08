@@ -15,11 +15,12 @@ namespace CS_operator
     public partial class Form1 : Form
     {
         private ControllerForm1 controller = new ControllerForm1();
-        public Form1()
+        public Form1(String username, String password)
         {
             InitializeComponent();
             errorLabel.Text = "";
-            //dataAboutPerson.Rows.Clear();
+            usernameLabel.Text = username;
+            passwordLabel.Text = password;
         }
 
         
@@ -108,6 +109,13 @@ namespace CS_operator
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAuth nextWindow = new FormAuth();
+            nextWindow.ShowDialog();
         }
     }
 }

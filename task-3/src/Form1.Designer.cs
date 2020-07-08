@@ -58,7 +58,7 @@
             this.date_maintenance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.loginLabel = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Button();
             this.address_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -329,40 +329,41 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(883, 31);
+            this.label9.Location = new System.Drawing.Point(863, 31);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(104, 25);
             this.label9.TabIndex = 17;
             this.label9.Text = "Operator";
             // 
-            // loginLabel
+            // usernameLabel
             // 
-            this.loginLabel.AutoSize = true;
-            this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginLabel.Location = new System.Drawing.Point(882, 64);
-            this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(58, 25);
-            this.loginLabel.TabIndex = 18;
-            this.loginLabel.Text = "login";
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.usernameLabel.Location = new System.Drawing.Point(862, 64);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(160, 25);
+            this.usernameLabel.TabIndex = 18;
+            this.usernameLabel.Text = "usernameLabel";
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordLabel.Location = new System.Drawing.Point(882, 96);
+            this.passwordLabel.Location = new System.Drawing.Point(862, 96);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(104, 25);
+            this.passwordLabel.Size = new System.Drawing.Size(157, 25);
             this.passwordLabel.TabIndex = 19;
-            this.passwordLabel.Text = "password";
+            this.passwordLabel.Text = "passwordLabel";
             // 
             // logoutButton
             // 
-            this.logoutButton.Location = new System.Drawing.Point(888, 136);
+            this.logoutButton.Location = new System.Drawing.Point(868, 136);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(75, 23);
             this.logoutButton.TabIndex = 20;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // address_service
             // 
@@ -427,7 +428,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 741);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.loginLabel);
+            this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dataEquipment);
@@ -490,7 +491,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date_maintenance;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label loginLabel;
+        private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn address_service;
