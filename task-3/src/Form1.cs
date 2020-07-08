@@ -14,64 +14,82 @@ namespace CS_operator
 {
     public partial class Form1 : Form
     {
+        private ControllerForm1 controller = new ControllerForm1();
         public Form1()
         {
             InitializeComponent();
             errorLabel.Text = "";
-            dataAboutPerson.Rows.Add("1", "2");
-            dataAboutPerson.Rows.Clear();
+            //dataAboutPerson.Rows.Clear();
         }
 
-        public string connectionString = "Data Source=4D97\\MSSSQLSERVER;Initial Catalog=CS;Integrated Security=True";
+        
 
         private void GetDataButton_Click(object sender, EventArgs e)
         {
-            
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            dataPerson.Rows.Clear();
+            dataPersonInfo.Rows.Clear();
+            dataCar.Rows.Clear();
+            dataService.Rows.Clear();
+            dataMessage.Rows.Clear();
+            dataEquipment.Rows.Clear();
 
-            sqlConnection.Open();
+            String IDString = IDTextBox.Text;
+            int id = 0;
 
-
-            if (sqlConnection.State == ConnectionState.Open)
+            if (int.TryParse(IDString, out id))
             {
-                CS_DB db = new CS_DB();
-                SqlConnection connection = db.getConnection();
-                SqlCommand command1 = new SqlCommand();
-                connection.Open();
-
-                String userIDString = IDTextBox.Text.ToString();
-                int userIDInt;
-
-                if (int.TryParse(userIDString, out userIDInt))
+                
+                List<string> personArray = controller.GetPersonByID(id);
+                for (int i = 0; i < personArray.Count; i += 3)
                 {
-                    dataAboutPerson.Rows.Clear();
-                    command1.CommandText = "SELECT * FROM GetConcreteCarByID(" + userIDInt.ToString() + ")";
-                    command1.Connection = connection;
-
-                    using (SqlDataReader reader = command1.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            dataAboutPerson.Rows.Add(reader[0], reader[1], reader[2], reader[3],
-                                reader[4], reader[5], reader[6] + " " + reader[7], reader[8]);
-                            
-                             /*MessageBox.Show(String.Format("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}",
-                                reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6], reader[7]));
-                            */
-                        }
-
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Error ID");
+                    dataPerson.Rows.Add(personArray[i], personArray[i+1], personArray[i+2]);
                 }
                 
+                
+                List<string> personInfoArray = controller.GetPersonInfoByID(id);
+                for (int i = 0; i < personInfoArray.Count; i += 3)
+                {
+                    dataPersonInfo.Rows.Add(personInfoArray[i], personInfoArray[i+1], personInfoArray[i+2]);
+                }
+
+                List<string> carsArray = controller.GetCarsByID(id);
+                for (int i = 0; i < carsArray.Count;)
+                {
+                    dataCar.Rows.Add(carsArray[i] + " " + carsArray[i + 1], carsArray[i + 2], carsArray[i + 3]);
+                    i += 4;
+                }
+
+                List<string> servicesArray = controller.GetServicesByID(id);
+                for (int i = 0; i < servicesArray.Count;)
+                {
+                    dataService.Rows.Add(servicesArray[i], servicesArray[i + 1], servicesArray[i + 2], servicesArray[i + 3]);
+                    i += 4;
+                }
+
+                //GetMessagesByPersonID
+                List<string> messagesArray = controller.GetMessagesByPersonID(id);
+                for (int i = 0; i < messagesArray.Count;)
+                {
+                    dataMessage.Rows.Add(messagesArray[i], 
+                                         messagesArray[i + 1], 
+                                         messagesArray[i + 2], 
+                                         messagesArray[i + 3],
+                                         messagesArray[i + 4],
+                                         messagesArray[i + 5]);
+                    i += 6;
+                }
+
+                List<string> equipmentsArray = controller.GetEquipmentsByPersonID(id);
+                for (int i = 0; i < equipmentsArray.Count;)
+                {
+                    dataEquipment.Rows.Add(equipmentsArray[i],
+                                         equipmentsArray[i + 1],
+                                         equipmentsArray[i + 2]);
+                    i += 3;
+                }
             }
-            else
-            {
-                MessageBox.Show("Error Connection");
-            }
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -80,6 +98,16 @@ namespace CS_operator
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
