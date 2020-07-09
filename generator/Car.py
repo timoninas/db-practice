@@ -10,14 +10,14 @@ diaposon = 350
 id_equipment = []
 
 for i in range(diaposon):
-    f.write(str(i) + ';')
+    f.write(str(i+1) + ';')
     while(1):
-        id_equip = myFaker.pyint(min_value=0, max_value=450, step=1)
+        id_equip = myFaker.pyint(min_value=1, max_value=451, step=1)
         if id_equip not in id_equipment:
             id_equipment.append(id_equip)
             f.write(str(id_equip) + ';')
             break
-    f.write(str(myFaker.pyint(min_value=0, max_value=49, step=1)) + ';')
+    f.write(str(myFaker.pyint(min_value=1, max_value=50, step=1)) + ';')
     
     f.write(myFaker.color_name() + ';')
     

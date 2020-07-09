@@ -16,10 +16,10 @@ brands = ['Teslt', 'BMW', 'Ferrari', 'Ford', 'Porsche', 'Honda', 'Lamborgini', '
 'Jaguar', 'Ford Mustang']
 
 for i in range(diaposon):
-    id = str(i)
+    id = str(i+1)
     f.write(id + ';')
 
-    id_communication = myFaker.pyint(min_value=0, max_value=6, step=1)
+    id_communication = myFaker.pyint(min_value=1, max_value=7, step=1)
     f.write(str(id_communication) + ';')
 
     name_operator = "Operator"

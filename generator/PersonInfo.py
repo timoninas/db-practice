@@ -10,7 +10,7 @@ diaposon = 250
 existings_id = []
 
 for i in range(diaposon):
-    fd1.write(str(i) + ';')
+    fd1.write(str(i+1) + ';')
     fd1.write(myFaker.address() + ';')
     fd1.write(myFaker.phone_number() + ';')
     fd1.write(myFaker.email())

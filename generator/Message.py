@@ -18,9 +18,9 @@ def formateDate(year):
         return str(year)
 
 for i in range(diaposon):
-    id = str(i)
+    id = str(i+1)
     f.write(id + ';')
-    f.write(str(myFaker.pyint(min_value=0, max_value=450, step=1)) + ';')
+    f.write(str(myFaker.pyint(min_value=1, max_value=450, step=1)) + ';')
 
     day = myFaker.pyint(min_value=1, max_value=28, step=1)
     month = myFaker.pyint(min_value=1, max_value=12, step=1)

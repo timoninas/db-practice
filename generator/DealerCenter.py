@@ -16,7 +16,7 @@ brands = ['Teslt', 'BMW', 'Ferrari', 'Ford', 'Porsche', 'Honda', 'Lamborgini', '
 'Jaguar', 'Ford Mustang']
 
 for i in range(diaposon):
-    id = str(i)
+    id = str(i+1)
     f.write(id + ';')
     f.write(myFaker.address() + ';')
 

@@ -14,8 +14,8 @@ def formateDate(year):
         return str(year)
 
 for i in range(diaposon):
-    f.write(str(i) + ';')
-    f.write(str(myFaker.pyint(min_value=0, max_value=19, step=1)) + ';')
+    f.write(str(i+1) + ';')
+    f.write(str(myFaker.pyint(min_value=1, max_value=20, step=1)) + ';')
 
     emei = ""
     for i in range (20):

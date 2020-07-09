@@ -16,10 +16,10 @@ for i in range(diaposon):
     if number % 3 == 0:
         gender = "female"
 
-    f.write(str(i) + ';')
+    f.write(str(i+1) + ';')
 
     while(1):
-        num = myFaker.pyint(min_value=0, max_value=diaposon, step=1)
+        num = myFaker.pyint(min_value=1, max_value=diaposon, step=1)
         if num not in existings_id:
             existings_id.append(num)
             f.write(str(num) + ';')

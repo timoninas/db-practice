@@ -10,7 +10,7 @@ diaposon = 250
 existings_id = []
 
 for i in range(diaposon):
-    f.write(str(i) + ';')
+    f.write(str(i+1) + ';')
     profile = myFaker.simple_profile()
     f.write(profile['username'] + ';')
     f.write(myFaker.password())

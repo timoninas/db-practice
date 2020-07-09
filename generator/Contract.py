@@ -24,10 +24,10 @@ def formateDate(year):
         return str(year)
 
 for i in range(diaposon):
-    f.write(str(i) + ';') #contract id
-    f.write(str(myFaker.pyint(min_value=0, max_value=350, step=1)) + ';') #car id
-    f.write(str(myFaker.pyint(min_value=0, max_value=250, step=1)) + ';') #person id
-    f.write(str(myFaker.pyint(min_value=0, max_value=15, step=1)) + ';') #service id
+    f.write(str(i+1) + ';') #contract id
+    f.write(str(myFaker.pyint(min_value=1, max_value=350, step=1)) + ';') #car id
+    f.write(str(myFaker.pyint(min_value=1, max_value=250, step=1)) + ';') #person id
+    f.write(str(myFaker.pyint(min_value=1, max_value=15, step=1)) + ';') #service id
 
     day1 = myFaker.pyint(min_value=1, max_value=28, step=1)
     month1 = myFaker.pyint(min_value=1, max_value=12, step=1)
