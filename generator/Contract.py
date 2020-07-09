@@ -7,7 +7,9 @@ import random
 # Car 350
 # Model Car 50
 # Equipment 450
-# CommunicationChanel 20
+# EquipmentMaintenance 2500
+# CommunicationChanel 19
+# TelecomOperator [0,6]
 
 myFaker = Faker('en_US')
 
