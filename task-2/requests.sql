@@ -89,3 +89,6 @@ SELECT * FROM GetNearbyMessagesWithDealerCenter();
 
 
 
+-- id, emei, data_maintence
+
+

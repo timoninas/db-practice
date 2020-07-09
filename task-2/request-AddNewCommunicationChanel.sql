@@ -42,5 +42,6 @@ END;
 
 EXEC AddNewCommunicationChanel 'Yota';
 
+SELECT * from CS.dbo.Equipment;
 SELECT * from CS.dbo.CommunicationChanel;
 SELECT * FROM CS.dbo.TelecomOperator;
