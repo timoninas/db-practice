@@ -6,9 +6,11 @@ CREATE DATABASE CS2
 GO
 
 CREATE TABLE CS2.dbo.PersonLoginInfo(
-id int NOT NULL,
-pusername VARCHAR(100) NOT NULL,
-ppassword VARCHAR(100) NOT NULL
+	id int NOT NULL IDENTITY(1, 1),
+	pusername VARCHAR(100) NOT NULL,
+	ppassword VARCHAR(100) NOT NULL,
+	CONSTRAINT PK_PersonLoginInfo PRIMARY KEY(id),
+	CONSTRAINT UK_PersonLoginInfo UNIQUE(id)
 )
 
 BULK INSERT CS2.dbo.PersonLoginInfo FROM '\\Mac\Home\Desktop\Практика\data\PersonLoginInfo.txt'
@@ -17,12 +19,15 @@ WITH
 
 SELECT * FROM CS2.dbo.PersonLoginInfo;
 
+
 CREATE TABLE CS2.dbo.DealerCenter(
-	id int NOT NULL,
+	id int NOT NULL IDENTITY(1, 1),
 	address VARCHAR(100) NOT NULL,
 	longitude float NOT NULL,
 	latitude float NOT NULL,
 	value_json VARCHAR(500) NOT NULL,
+	CONSTRAINT PK_DealerCenter PRIMARY KEY(id),
+	CONSTRAINT UK_DealerCenter UNIQUE(id)
 )
 
 BULK INSERT CS2.dbo.DealerCenter FROM '\\Mac\Home\Desktop\Практика\data\DealerCenter.txt'

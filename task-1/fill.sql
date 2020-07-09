@@ -31,10 +31,15 @@ BULK INSERT CS.dbo.Message FROM '\\Mac\Home\Desktop\Практика\data\Message.txt'
 WITH
 (DATAFILETYPE = 'char', FIELDTERMINATOR = ';', ROWTERMINATOR = '\n', check_constraints);
 
+BULK INSERT CS.dbo.TelecomOperator FROM '\\Mac\Home\Desktop\Практика\data\TelecomOperator.txt'
+WITH
+(DATAFILETYPE = 'char', FIELDTERMINATOR = ';', ROWTERMINATOR = '\n', check_constraints);
+
 BULK INSERT CS.dbo.CommunicationChanel FROM '\\Mac\Home\Desktop\Практика\data\CommunicationChanel.txt'
 WITH
 (DATAFILETYPE = 'char', FIELDTERMINATOR = ';', ROWTERMINATOR = '\n', check_constraints);
 
-BULK INSERT CS.dbo.TelecomOperator FROM '\\Mac\Home\Desktop\Практика\data\TelecomOperator.txt'
+BULK INSERT CS.dbo.EquipmentMaintenance FROM '\\Mac\Home\Desktop\Практика\data\EquipmentMaintenance.txt'
 WITH
 (DATAFILETYPE = 'char', FIELDTERMINATOR = ';', ROWTERMINATOR = '\n', check_constraints);
+
