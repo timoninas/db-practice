@@ -1,30 +1,30 @@
-0;4826 Hunter Fields
-New Kevinberg, LA 39155;53.693;12.582
-1;355 Jeremy Union Suite 632
-Angelafort, RI 15047;51.475;12.059
-2;869 Jones Views Apt. 876
-South Larryfort, NC 09374;64.088;26.046
-3;221 Norman Lodge
-Port Jerrymouth, AL 33241;63.985;11.458
-4;575 Morales Extension Suite 707
-Lake Briannaport, NJ 31313;56.644;16.881
-5;3295 Matthew Flats
-Dianeburgh, ME 09139;61.023;24.339
-6;2182 Smith Views
-New Rebecca, WV 93613;55.077;17.725
-7;63331 Green Ford Suite 701
-Kennedyview, KY 83395;53.15;17.713
-8;86340 Ashley Ports
-East Virginia, TX 54860;70.662;24.889
-9;6245 Willis Forest Apt. 929
-West Aaron, HI 40218;52.087;15.382
-10;0052 Le Inlet
-East Christophermouth, MI 01408;67.301;25.409
-11;295 Cathy Mount Suite 235
-South Anna, WY 81801;51.83;10.044
-12;Unit 0956 Box 1535
-DPO AA 89993;63.293;21.041
-13;6113 Hawkins Summit
-Brianshire, NM 78883;50.673;9.312
-14;5905 Parker Circles Apt. 021
-South Bryan, OH 15325;74.526;25.585
+1;78105 Ritter Common
+East Hannah, NE 16141;53.772;20.337
+2;28034 Stephanie Motorway Apt. 291
+Floresborough, MS 53281;62.123;10.908
+3;43711 Jacob Trace
+Lake Nicole, SD 78879;62.502;14.413
+4;Unit 7801 Box 4845
+DPO AA 28287;55.602;21.061
+5;51618 Sarah Estates Suite 053
+Andersonton, UT 02543;52.575;20.341
+6;45377 Shepherd Mountains Apt. 814
+South Lindsaytown, WV 29358;54.854;12.197
+7;Unit 5736 Box 7055
+DPO AE 34028;56.133;16.201
+8;594 Miranda Rapids
+Thompsonbury, HI 77113;64.949;27.574
+9;17913 Ashley Springs
+Lake Jennifer, WY 30584;66.717;17.67
+10;18014 Tyler Port Suite 342
+Jacobschester, NV 68255;70.094;15.243
+11;16799 Malone Lane Suite 081
+West Sandraton, NM 60854;73.129;16.125
+12;91221 Smith Tunnel Suite 872
+Robertstad, UT 08601;70.795;16.216
+13;400 Linda Mills
+Carrollberg, IN 86745;70.778;10.482
+14;7569 Megan Ports
+Mackborough, MO 39492;58.918;12.74
+15;23478 Grimes Lakes
+Tonyside, UT 93416;62.222;20.732
