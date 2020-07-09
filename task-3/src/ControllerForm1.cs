@@ -184,5 +184,31 @@ namespace CS_operator
 
             return array;
         }
+
+        public List<String> GetEquipmentMaintenanceByPersonID(int id)
+        {
+            List<String> array = new List<String>();
+
+            db.openConnection();
+            SqlConnection connection = db.getConnection();
+            SqlCommand command1 = new SqlCommand();
+
+            command1.CommandText = "SELECT * FROM CS.dbo.GetEquipmentMaintenanceByPersonID(" + id.ToString() + ") as formedTable ORDER BY formedTable.id_equipment";
+            command1.Connection = connection;
+
+            using (SqlDataReader reader = command1.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    array.Add(reader[0].ToString());
+                    array.Add(reader[1].ToString());
+                    array.Add(reader[2].ToString());
+                    array.Add(reader[3].ToString());
+                }
+
+            }
+
+            return array;
+        }
     }
 }

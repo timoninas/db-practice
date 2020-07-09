@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,7 @@ namespace CS_operator
             dataService.Rows.Clear();
             dataMessage.Rows.Clear();
             dataEquipment.Rows.Clear();
+            dataEquipmentMaintenance.Rows.Clear();
 
             String IDString = IDTextBox.Text;
             int id = 0;
@@ -88,6 +90,16 @@ namespace CS_operator
                                          equipmentsArray[i + 2]);
                     i += 3;
                 }
+
+                List<string> equipmentMaintenanceArray = controller.GetEquipmentMaintenanceByPersonID(id);
+                for (int i = 0; i < equipmentMaintenanceArray.Count;)
+                {
+                    dataEquipmentMaintenance.Rows.Add(equipmentMaintenanceArray[i],
+                                         equipmentMaintenanceArray[i + 1],
+                                         equipmentMaintenanceArray[i + 2],
+                                         equipmentMaintenanceArray[i + 3]);
+                    i += 4;
+                }
             }
 
             
@@ -116,6 +128,22 @@ namespace CS_operator
             this.Hide();
             FormAuth nextWindow = new FormAuth();
             nextWindow.ShowDialog();
+        }
+
+        private void dataEquipmentMaintenance_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int chosenId = e.RowIndex;
+            if (e.ColumnIndex == json_report.Index)
+            {
+                string json_message = dataEquipmentMaintenance[e.ColumnIndex, chosenId].Value.ToString();
+                //MessageBox.Show(dataEquipmentMaintenance[e.ColumnIndex, chosenId].Value.ToString());
+                //this.Hide();
+
+                StatusEquipment eq = JsonConvert.DeserializeObject<StatusEquipment>(json_message);
+                FormTechView nextWindow = new FormTechView(eq.title, eq.engine, eq.clutch, eq.doors, eq.machine_body, eq.wheels);
+                nextWindow.ShowDialog();
+            }
+            errorLabel.Text = e.ColumnIndex.ToString();
         }
     }
 }

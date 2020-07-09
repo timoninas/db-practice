@@ -16,6 +16,7 @@ namespace CS_operator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1("123", "123"));
             Application.Run(new FormAuth());
         }
     }

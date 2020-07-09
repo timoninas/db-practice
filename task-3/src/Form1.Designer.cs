@@ -46,11 +46,21 @@
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataService = new System.Windows.Forms.DataGridView();
+            this.address_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number_car = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.longitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.latitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataMessage = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.message = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_with_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emei_equipment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.message_longitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.message_latitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.dataEquipment = new System.Windows.Forms.DataGridView();
             this.id_equipment = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,22 +71,19 @@
             this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Button();
-            this.address_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number_car = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.longitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.latitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.message = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_with_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emei_equipment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.message_longitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.message_latitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataEquipmentMaintenance = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.id_equipment_maintenance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_visit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.json_report = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_service_center = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEquipment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataEquipmentMaintenance)).BeginInit();
             this.SuspendLayout();
             // 
             // IDTextBox
@@ -117,7 +124,7 @@
             // 
             this.errorLabel.AutoSize = true;
             this.errorLabel.ForeColor = System.Drawing.Color.OrangeRed;
-            this.errorLabel.Location = new System.Drawing.Point(375, 38);
+            this.errorLabel.Location = new System.Drawing.Point(169, 168);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(15, 13);
             this.errorLabel.TabIndex = 4;
@@ -224,8 +231,31 @@
             this.latitude});
             this.dataService.Location = new System.Drawing.Point(13, 508);
             this.dataService.Name = "dataService";
-            this.dataService.Size = new System.Drawing.Size(246, 150);
+            this.dataService.Size = new System.Drawing.Size(246, 211);
             this.dataService.TabIndex = 8;
+            // 
+            // address_service
+            // 
+            this.address_service.HeaderText = "Адрес";
+            this.address_service.Name = "address_service";
+            this.address_service.Width = 67;
+            // 
+            // number_car
+            // 
+            this.number_car.HeaderText = "Номер машины";
+            this.number_car.Name = "number_car";
+            // 
+            // longitude
+            // 
+            this.longitude.HeaderText = "Долгота";
+            this.longitude.Name = "longitude";
+            this.longitude.Width = 67;
+            // 
+            // latitude
+            // 
+            this.latitude.HeaderText = "Широта";
+            this.latitude.Name = "latitude";
+            this.latitude.Width = 67;
             // 
             // label3
             // 
@@ -279,6 +309,39 @@
             this.dataMessage.Size = new System.Drawing.Size(432, 427);
             this.dataMessage.TabIndex = 13;
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Width = 40;
+            // 
+            // message
+            // 
+            this.message.HeaderText = "Сообщение";
+            this.message.Name = "message";
+            // 
+            // date_with_time
+            // 
+            this.date_with_time.HeaderText = "Дата и время";
+            this.date_with_time.Name = "date_with_time";
+            this.date_with_time.Width = 120;
+            // 
+            // emei_equipment
+            // 
+            this.emei_equipment.HeaderText = "Emei Обр.";
+            this.emei_equipment.Name = "emei_equipment";
+            this.emei_equipment.Width = 110;
+            // 
+            // message_longitude
+            // 
+            this.message_longitude.HeaderText = "Долгота";
+            this.message_longitude.Name = "message_longitude";
+            // 
+            // message_latitude
+            // 
+            this.message_latitude.HeaderText = "Широта";
+            this.message_latitude.Name = "message_latitude";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -295,16 +358,16 @@
             this.id_equipment,
             this.emei,
             this.date_maintenance});
-            this.dataEquipment.Location = new System.Drawing.Point(412, 508);
+            this.dataEquipment.Location = new System.Drawing.Point(325, 508);
             this.dataEquipment.Name = "dataEquipment";
-            this.dataEquipment.Size = new System.Drawing.Size(278, 150);
+            this.dataEquipment.Size = new System.Drawing.Size(307, 211);
             this.dataEquipment.TabIndex = 15;
             // 
             // id_equipment
             // 
             this.id_equipment.HeaderText = "id";
             this.id_equipment.Name = "id_equipment";
-            this.id_equipment.Width = 40;
+            this.id_equipment.Width = 50;
             // 
             // emei
             // 
@@ -315,11 +378,12 @@
             // 
             this.date_maintenance.HeaderText = "Дата поддержки";
             this.date_maintenance.Name = "date_maintenance";
+            this.date_maintenance.Width = 135;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(409, 489);
+            this.label8.Location = new System.Drawing.Point(322, 489);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 13);
             this.label8.TabIndex = 16;
@@ -365,67 +429,59 @@
             this.logoutButton.UseVisualStyleBackColor = true;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
-            // address_service
+            // dataEquipmentMaintenance
             // 
-            this.address_service.HeaderText = "Адрес";
-            this.address_service.Name = "address_service";
-            this.address_service.Width = 67;
+            this.dataEquipmentMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataEquipmentMaintenance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_equipment_maintenance,
+            this.date_visit,
+            this.json_report,
+            this.id_service_center});
+            this.dataEquipmentMaintenance.Location = new System.Drawing.Point(671, 508);
+            this.dataEquipmentMaintenance.Name = "dataEquipmentMaintenance";
+            this.dataEquipmentMaintenance.Size = new System.Drawing.Size(325, 211);
+            this.dataEquipmentMaintenance.TabIndex = 21;
+            this.dataEquipmentMaintenance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEquipmentMaintenance_CellContentClick);
             // 
-            // number_car
+            // label10
             // 
-            this.number_car.HeaderText = "Номер машины";
-            this.number_car.Name = "number_car";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(671, 489);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 13);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "EquipmentMaintenance";
             // 
-            // longitude
+            // id_equipment_maintenance
             // 
-            this.longitude.HeaderText = "Долгота";
-            this.longitude.Name = "longitude";
-            this.longitude.Width = 67;
+            this.id_equipment_maintenance.HeaderText = "id Eq";
+            this.id_equipment_maintenance.Name = "id_equipment_maintenance";
+            this.id_equipment_maintenance.Width = 60;
             // 
-            // latitude
+            // date_visit
             // 
-            this.latitude.HeaderText = "Широта";
-            this.latitude.Name = "latitude";
-            this.latitude.Width = 67;
+            this.date_visit.HeaderText = "Дата посещения";
+            this.date_visit.Name = "date_visit";
+            this.date_visit.Width = 115;
             // 
-            // id
+            // json_report
             // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Width = 40;
+            this.json_report.HeaderText = "Отчет";
+            this.json_report.Name = "json_report";
+            this.json_report.Width = 140;
             // 
-            // message
+            // id_service_center
             // 
-            this.message.HeaderText = "Сообщение";
-            this.message.Name = "message";
-            // 
-            // date_with_time
-            // 
-            this.date_with_time.HeaderText = "Дата и время";
-            this.date_with_time.Name = "date_with_time";
-            this.date_with_time.Width = 120;
-            // 
-            // emei_equipment
-            // 
-            this.emei_equipment.HeaderText = "Emei Обр.";
-            this.emei_equipment.Name = "emei_equipment";
-            this.emei_equipment.Width = 110;
-            // 
-            // message_longitude
-            // 
-            this.message_longitude.HeaderText = "Долгота";
-            this.message_longitude.Name = "message_longitude";
-            // 
-            // message_latitude
-            // 
-            this.message_latitude.HeaderText = "Широта";
-            this.message_latitude.Name = "message_latitude";
+            this.id_service_center.HeaderText = "id Сервис ц.";
+            this.id_service_center.Name = "id_service_center";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 741);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dataEquipmentMaintenance);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
@@ -455,6 +511,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataService)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEquipment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataEquipmentMaintenance)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,9 +543,6 @@
         private System.Windows.Forms.DataGridView dataMessage;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataEquipment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_equipment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emei;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_maintenance;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label usernameLabel;
@@ -504,6 +558,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emei_equipment;
         private System.Windows.Forms.DataGridViewTextBoxColumn message_longitude;
         private System.Windows.Forms.DataGridViewTextBoxColumn message_latitude;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_equipment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emei;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_maintenance;
+        private System.Windows.Forms.DataGridView dataEquipmentMaintenance;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_equipment_maintenance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_visit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn json_report;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_service_center;
     }
 }
 
