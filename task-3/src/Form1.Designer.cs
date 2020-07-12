@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.IDTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -72,11 +73,16 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Button();
             this.dataEquipmentMaintenance = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
             this.id_equipment_maintenance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_visit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.json_report = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_service_center = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
+            this.mainTabControll = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataCar)).BeginInit();
@@ -84,11 +90,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEquipment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEquipmentMaintenance)).BeginInit();
+            this.mainTabControll.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // IDTextBox
             // 
-            this.IDTextBox.Location = new System.Drawing.Point(278, 60);
+            this.IDTextBox.Location = new System.Drawing.Point(837, 193);
             this.IDTextBox.Name = "IDTextBox";
             this.IDTextBox.Size = new System.Drawing.Size(103, 20);
             this.IDTextBox.TabIndex = 1;
@@ -104,7 +112,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(281, 37);
+            this.label2.Location = new System.Drawing.Point(840, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 2;
@@ -112,7 +120,7 @@
             // 
             // GetDataButton
             // 
-            this.GetDataButton.Location = new System.Drawing.Point(278, 86);
+            this.GetDataButton.Location = new System.Drawing.Point(837, 219);
             this.GetDataButton.Name = "GetDataButton";
             this.GetDataButton.Size = new System.Drawing.Size(103, 23);
             this.GetDataButton.TabIndex = 3;
@@ -124,7 +132,7 @@
             // 
             this.errorLabel.AutoSize = true;
             this.errorLabel.ForeColor = System.Drawing.Color.OrangeRed;
-            this.errorLabel.Location = new System.Drawing.Point(169, 168);
+            this.errorLabel.Location = new System.Drawing.Point(938, 170);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(15, 13);
             this.errorLabel.TabIndex = 4;
@@ -137,9 +145,9 @@
             this.name,
             this.Surname,
             this.gender});
-            this.dataPerson.Location = new System.Drawing.Point(12, 38);
+            this.dataPerson.Location = new System.Drawing.Point(14, 23);
             this.dataPerson.Name = "dataPerson";
-            this.dataPerson.Size = new System.Drawing.Size(246, 108);
+            this.dataPerson.Size = new System.Drawing.Size(315, 85);
             this.dataPerson.TabIndex = 5;
             this.dataPerson.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -147,19 +155,19 @@
             // 
             this.name.HeaderText = "Имя";
             this.name.Name = "name";
-            this.name.Width = 75;
+            this.name.Width = 95;
             // 
             // Surname
             // 
             this.Surname.HeaderText = "Фамилия";
             this.Surname.Name = "Surname";
-            this.Surname.Width = 75;
+            this.Surname.Width = 95;
             // 
             // gender
             // 
             this.gender.HeaderText = "Пол";
             this.gender.Name = "gender";
-            this.gender.Width = 50;
+            this.gender.Width = 95;
             // 
             // dataPersonInfo
             // 
@@ -168,28 +176,28 @@
             this.address,
             this.phone,
             this.email});
-            this.dataPersonInfo.Location = new System.Drawing.Point(13, 184);
+            this.dataPersonInfo.Location = new System.Drawing.Point(14, 134);
             this.dataPersonInfo.Name = "dataPersonInfo";
-            this.dataPersonInfo.Size = new System.Drawing.Size(246, 113);
+            this.dataPersonInfo.Size = new System.Drawing.Size(315, 79);
             this.dataPersonInfo.TabIndex = 6;
             // 
             // address
             // 
             this.address.HeaderText = "Адрес";
             this.address.Name = "address";
-            this.address.Width = 65;
+            this.address.Width = 95;
             // 
             // phone
             // 
             this.phone.HeaderText = "Телефон";
             this.phone.Name = "phone";
-            this.phone.Width = 65;
+            this.phone.Width = 95;
             // 
             // email
             // 
             this.email.HeaderText = "Почта";
             this.email.Name = "email";
-            this.email.Width = 65;
+            this.email.Width = 95;
             // 
             // dataCar
             // 
@@ -198,28 +206,28 @@
             this.car_model,
             this.number,
             this.color});
-            this.dataCar.Location = new System.Drawing.Point(13, 337);
+            this.dataCar.Location = new System.Drawing.Point(14, 239);
             this.dataCar.Name = "dataCar";
-            this.dataCar.Size = new System.Drawing.Size(246, 128);
+            this.dataCar.Size = new System.Drawing.Size(315, 151);
             this.dataCar.TabIndex = 7;
             // 
             // car_model
             // 
             this.car_model.HeaderText = "Модель м.";
             this.car_model.Name = "car_model";
-            this.car_model.Width = 75;
+            this.car_model.Width = 95;
             // 
             // number
             // 
             this.number.HeaderText = "Номер";
             this.number.Name = "number";
-            this.number.Width = 75;
+            this.number.Width = 95;
             // 
             // color
             // 
             this.color.HeaderText = "Цвет";
             this.color.Name = "color";
-            this.color.Width = 75;
+            this.color.Width = 95;
             // 
             // dataService
             // 
@@ -229,9 +237,9 @@
             this.number_car,
             this.longitude,
             this.latitude});
-            this.dataService.Location = new System.Drawing.Point(13, 508);
+            this.dataService.Location = new System.Drawing.Point(14, 423);
             this.dataService.Name = "dataService";
-            this.dataService.Size = new System.Drawing.Size(246, 211);
+            this.dataService.Size = new System.Drawing.Size(315, 270);
             this.dataService.TabIndex = 8;
             // 
             // address_service
@@ -260,7 +268,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 22);
+            this.label3.Location = new System.Drawing.Point(12, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 9;
@@ -270,7 +278,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 168);
+            this.label4.Location = new System.Drawing.Point(12, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 13);
             this.label4.TabIndex = 10;
@@ -279,7 +287,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 318);
+            this.label5.Location = new System.Drawing.Point(12, 223);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 13);
             this.label5.TabIndex = 11;
@@ -288,7 +296,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 489);
+            this.label6.Location = new System.Drawing.Point(11, 406);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 13);
             this.label6.TabIndex = 12;
@@ -304,9 +312,9 @@
             this.emei_equipment,
             this.message_longitude,
             this.message_latitude});
-            this.dataMessage.Location = new System.Drawing.Point(412, 38);
+            this.dataMessage.Location = new System.Drawing.Point(347, 29);
             this.dataMessage.Name = "dataMessage";
-            this.dataMessage.Size = new System.Drawing.Size(432, 427);
+            this.dataMessage.Size = new System.Drawing.Size(478, 361);
             this.dataMessage.TabIndex = 13;
             // 
             // id
@@ -345,7 +353,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(412, 22);
+            this.label7.Location = new System.Drawing.Point(344, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 13);
             this.label7.TabIndex = 14;
@@ -358,9 +366,9 @@
             this.id_equipment,
             this.emei,
             this.date_maintenance});
-            this.dataEquipment.Location = new System.Drawing.Point(325, 508);
+            this.dataEquipment.Location = new System.Drawing.Point(347, 423);
             this.dataEquipment.Name = "dataEquipment";
-            this.dataEquipment.Size = new System.Drawing.Size(307, 211);
+            this.dataEquipment.Size = new System.Drawing.Size(285, 270);
             this.dataEquipment.TabIndex = 15;
             // 
             // id_equipment
@@ -383,7 +391,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(322, 489);
+            this.label8.Location = new System.Drawing.Point(344, 406);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 13);
             this.label8.TabIndex = 16;
@@ -393,7 +401,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(863, 31);
+            this.label9.Location = new System.Drawing.Point(832, 13);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(104, 25);
             this.label9.TabIndex = 17;
@@ -403,7 +411,7 @@
             // 
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.usernameLabel.Location = new System.Drawing.Point(862, 64);
+            this.usernameLabel.Location = new System.Drawing.Point(831, 46);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(160, 25);
             this.usernameLabel.TabIndex = 18;
@@ -413,7 +421,7 @@
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordLabel.Location = new System.Drawing.Point(862, 96);
+            this.passwordLabel.Location = new System.Drawing.Point(831, 78);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(157, 25);
             this.passwordLabel.TabIndex = 19;
@@ -421,7 +429,7 @@
             // 
             // logoutButton
             // 
-            this.logoutButton.Location = new System.Drawing.Point(868, 136);
+            this.logoutButton.Location = new System.Drawing.Point(837, 118);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(75, 23);
             this.logoutButton.TabIndex = 20;
@@ -437,20 +445,11 @@
             this.date_visit,
             this.json_report,
             this.id_service_center});
-            this.dataEquipmentMaintenance.Location = new System.Drawing.Point(671, 508);
+            this.dataEquipmentMaintenance.Location = new System.Drawing.Point(650, 423);
             this.dataEquipmentMaintenance.Name = "dataEquipmentMaintenance";
-            this.dataEquipmentMaintenance.Size = new System.Drawing.Size(325, 211);
+            this.dataEquipmentMaintenance.Size = new System.Drawing.Size(341, 270);
             this.dataEquipmentMaintenance.TabIndex = 21;
             this.dataEquipmentMaintenance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEquipmentMaintenance_CellContentClick);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(671, 489);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 13);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "EquipmentMaintenance";
             // 
             // id_equipment_maintenance
             // 
@@ -475,36 +474,87 @@
             this.id_service_center.HeaderText = "id Сервис ц.";
             this.id_service_center.Name = "id_service_center";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(647, 406);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 13);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "EquipmentMaintenance";
+            // 
+            // mainTabControll
+            // 
+            this.mainTabControll.AccessibleName = "";
+            this.mainTabControll.Controls.Add(this.tabPage1);
+            this.mainTabControll.Controls.Add(this.tabPage2);
+            this.mainTabControll.Location = new System.Drawing.Point(3, 4);
+            this.mainTabControll.Name = "mainTabControll";
+            this.mainTabControll.SelectedIndex = 0;
+            this.mainTabControll.Size = new System.Drawing.Size(1005, 736);
+            this.mainTabControll.TabIndex = 23;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataMessage);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.dataEquipmentMaintenance);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.logoutButton);
+            this.tabPage1.Controls.Add(this.dataEquipment);
+            this.tabPage1.Controls.Add(this.passwordLabel);
+            this.tabPage1.Controls.Add(this.dataService);
+            this.tabPage1.Controls.Add(this.usernameLabel);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.dataCar);
+            this.tabPage1.Controls.Add(this.errorLabel);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.GetDataButton);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.dataPersonInfo);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.IDTextBox);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.dataPerson);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(997, 710);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Информация об пользователе";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(997, 710);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Пустая вкладка";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 741);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.dataEquipmentMaintenance);
-            this.Controls.Add(this.logoutButton);
-            this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.usernameLabel);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.dataEquipment);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.dataMessage);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataService);
-            this.Controls.Add(this.dataCar);
-            this.Controls.Add(this.dataPersonInfo);
-            this.Controls.Add(this.dataPerson);
-            this.Controls.Add(this.errorLabel);
-            this.Controls.Add(this.GetDataButton);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.mainTabControll);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.IDTextBox);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Приложение оператора";
             ((System.ComponentModel.ISupportInitialize)(this.dataPerson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataCar)).EndInit();
@@ -512,8 +562,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEquipment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEquipmentMaintenance)).EndInit();
+            this.mainTabControll.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -524,18 +576,9 @@
         private System.Windows.Forms.Button GetDataButton;
         private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.DataGridView dataPerson;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridView dataPersonInfo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridView dataCar;
         private System.Windows.Forms.DataGridView dataService;
-        private System.Windows.Forms.DataGridViewTextBoxColumn car_model;
-        private System.Windows.Forms.DataGridViewTextBoxColumn number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn color;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -567,6 +610,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date_visit;
         private System.Windows.Forms.DataGridViewTextBoxColumn json_report;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_service_center;
+        private System.Windows.Forms.TabControl mainTabControll;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn car_model;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn color;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }
 

@@ -175,7 +175,7 @@
             this.Controls.Add(this.engineLabel);
             this.Controls.Add(this.closeButton);
             this.Name = "FormTechView";
-            this.Text = "Form2";
+            this.Text = "Детальная информация об осмотре машины";
             this.ResumeLayout(false);
             this.PerformLayout();
 

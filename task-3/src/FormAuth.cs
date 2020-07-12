@@ -13,35 +13,18 @@ namespace CS_operator
 {
     public partial class FormAuth : Form
     {
-        CS_DB db = new CS_DB();
+        ControllerFormAuth controller;
         public FormAuth()
         {
             InitializeComponent();
-            SqlConnection connection = db.getConnection();
-            //usernameTextBox;
-            //passwordTextBox;
+
+            this.controller = new ControllerFormAuth();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            db.openConnection();
-            SqlConnection connection = db.getConnection();
-            SqlCommand command1 = new SqlCommand();
 
-            command1.CommandText = "SELECT * FROM Operator as op WHERE op.username = '" + usernameTextBox.Text + "' AND op.password = '" + passwordTextBox.Text + "'";
-            command1.Connection = connection;
-
-            List<string> array = new List<string>();
-
-            using (SqlDataReader reader = command1.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    array.Add(reader[0].ToString());
-                }
-            }
-
-            if (array.Count > 0)
+            if (controller.IsLogged(usernameTextBox.Text, passwordTextBox.Text))
             {
                 this.Hide();
                 Form1 nextWindow = new Form1(usernameTextBox.Text, passwordTextBox.Text);

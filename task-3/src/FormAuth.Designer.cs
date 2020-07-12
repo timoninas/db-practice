@@ -45,6 +45,7 @@
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(440, 277);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '●';
             this.passwordTextBox.Size = new System.Drawing.Size(150, 20);
             this.passwordTextBox.TabIndex = 1;
             // 
@@ -78,7 +79,7 @@
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.usernameTextBox);
             this.Name = "FormAuth";
-            this.Text = "FormAuth";
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

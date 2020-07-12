@@ -19,14 +19,13 @@ namespace CS_operator
         public Form1(String username, String password)
         {
             InitializeComponent();
+            
             errorLabel.Text = "";
             usernameLabel.Text = username;
             passwordLabel.Text = password;
         }
 
-        
-
-        private void GetDataButton_Click(object sender, EventArgs e)
+        private void ClearTextBoxes()
         {
             dataPerson.Rows.Clear();
             dataPersonInfo.Rows.Clear();
@@ -35,6 +34,11 @@ namespace CS_operator
             dataMessage.Rows.Clear();
             dataEquipment.Rows.Clear();
             dataEquipmentMaintenance.Rows.Clear();
+        }
+
+        private void GetDataButton_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes();
 
             String IDString = IDTextBox.Text;
             int id = 0;
