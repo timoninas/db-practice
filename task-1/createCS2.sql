@@ -5,6 +5,7 @@ CREATE DATABASE CS2
 
 GO
 
+
 CREATE TABLE CS2.dbo.PersonLoginInfo(
 	id int NOT NULL IDENTITY(1, 1),
 	pusername VARCHAR(100) NOT NULL,
@@ -19,6 +20,11 @@ WITH
 
 SELECT * FROM CS2.dbo.PersonLoginInfo;
 
+------------------------------------
+------------------------------------
+------------------------------------
+
+drop table CS2.dbo.DealerCenter;
 
 CREATE TABLE CS2.dbo.DealerCenter(
 	id int NOT NULL IDENTITY(1, 1),
@@ -36,4 +42,38 @@ WITH
 
 SELECT * FROM CS2.dbo.DealerCenter;
 
-SELECT * FROM CS.dbo.Message;
+------------------------------------
+------------------------------------
+------------------------------------
+
+drop table CS2.dbo.PersonMobileDevice;
+
+CREATE TABLE CS2.dbo.PersonMobileDevice(
+	id int NOT NULL IDENTITY(1, 1),
+	id_person_login_info int NOT NULL,
+	id_mobile_info int NOT NULL
+)
+
+BULK INSERT CS2.dbo.PersonMobileDevice FROM '\\Mac\Home\Desktop\Практика\data\PersonMobileDevice.txt'
+WITH
+(DATAFILETYPE = 'char', FIELDTERMINATOR = ';', ROWTERMINATOR = '\n', check_constraints);
+
+SELECT * FROM CS2.dbo.PersonMobileDevice;
+
+------------------------------------
+------------------------------------
+------------------------------------
+
+drop table CS2.dbo.MobileInfo;
+
+CREATE TABLE CS2.dbo.MobileInfo(
+	id int NOT NULL IDENTITY(1, 1),
+	sms int NOT NULL,
+	mail int NOT NULL
+)
+
+BULK INSERT CS2.dbo.MobileInfo FROM '\\Mac\Home\Desktop\Практика\data\MobileInfo.txt'
+WITH
+(DATAFILETYPE = 'char', FIELDTERMINATOR = ';', ROWTERMINATOR = '\n', check_constraints);
+
+SELECT * FROM CS2.dbo.MobileInfo;

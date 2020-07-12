@@ -50,6 +50,7 @@ CREATE TABLE CS.dbo.Car(
 id int NOT NULL IDENTITY(1, 1),
 id_equipment int NOT NULL,
 id_cmodel int NOT NULL,
+id_config int NOT NULL,
 ccolor VARCHAR(100) NOT NULL,
 cnumber VARCHAR(100) NOT NULL,
 CONSTRAINT PK_Car PRIMARY KEY(id),
@@ -63,6 +64,13 @@ mcbrand VARCHAR(100) NOT NULL,
 mcmodel VARCHAR(100) NOT NULL,
 CONSTRAINT PK_ModelCar PRIMARY KEY(id),
 CONSTRAINT UK_ModelCar UNIQUE(id)
+)
+
+
+CREATE TABLE CS.dbo.ConfigCar(
+id int NOT NULL IDENTITY(1, 1),
+name_config VARCHAR(50) NOT NULL,
+json VARCHAR(200) NOT NULL
 )
 
 
@@ -93,6 +101,7 @@ CONSTRAINT PK_TC PRIMARY KEY(id),
 CONSTRAINT UK_TC UNIQUE(id)
 )
 
+
 CREATE TABLE CS.dbo.EquipmentMaintenance (
 id INT NOT NULL IDENTITY(1, 1),
 id_equipment INT NOT NULL,
@@ -103,6 +112,7 @@ CONSTRAINT PK_EqM PRIMARY KEY(id),
 CONSTRAINT UK_EqM UNIQUE(id)
 )
 
+
 CREATE TABLE CS.dbo.CommunicationChanel (
 id int NOT NULL IDENTITY(1, 1),
 id_telecom_operator int NOT NULL,
@@ -111,6 +121,7 @@ CONSTRAINT PK_CC PRIMARY KEY(id),
 CONSTRAINT UK_CC UNIQUE(id),
 CONSTRAINT FK_id_telecom_operator FOREIGN KEY(id_telecom_operator) REFERENCES CS.dbo.TelecomOperator(id)
 )
+
 
 CREATE TABLE CS.dbo.Operator (
 id int NOT NULL IDENTITY(1, 1),
