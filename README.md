@@ -6,6 +6,9 @@
   <img src="https://github.com/timoninas/db-practice/blob/master/model/bd_cs.png"/>
 </p>
 
+
+# Приложение оператора
+
 ## Страница регистрации
 
 <p align="center">
