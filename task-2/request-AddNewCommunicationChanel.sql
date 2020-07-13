@@ -26,18 +26,26 @@ BEGIN
 		ELSE 'unknown_tech'
 	END;
 
-	SELECT @ID_COMMUNICATION_CHANEL = MAX(cc.id) + 1 FROM CS.dbo.CommunicationChanel as cc;
-
 	SELECT @ID_OPERATOR = toper.id FROM CS.dbo.TelecomOperator as toper
 	WHERE toper.operator = @NAME_OPERATOR;
 	
-	INSERT INTO CS.dbo.CommunicationChanel(id, id_telecom_operator, name)
-	VALUES (@ID_COMMUNICATION_CHANEL, @ID_OPERATOR, @name_communication);
+	INSERT INTO CS.dbo.CommunicationChanel(id_telecom_operator, name)
+	VALUES (@ID_OPERATOR, @name_communication);
+	SET @ID_COMMUNICATION_CHANEL = (SELECT SCOPE_IDENTITY());
 
-	--INSERT INTO CS.dbo.TelecomOperator(id, operator)
-	--VALUES (@ID_OPERATOR, @NAME_OPERATOR);
+	IF (object_id('CS.dbo.TmpTable','U')) IS NOT NULL
+	BEGIN
+		DROP TABLE CS.dbo.TmpTable;
+	END;
 
-	SELECT @NAME_OPERATOR, @ID_OPERATOR;
+	CREATE TABLE CS.dbo.TmpTable(
+		num_id_operator int NOT NULL
+	);
+
+	INSERT INTO CS.dbo.TmpTable (num_id_operator)
+	VALUES (@ID_COMMUNICATION_CHANEL);
+
+	SELECT @ID_COMMUNICATION_CHANEL;
 END;
 
 EXEC AddNewCommunicationChanel 'Yota';

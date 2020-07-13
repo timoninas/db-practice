@@ -41,19 +41,10 @@ BEGIN
 	SELECT @DATE_START = CONVERT(DATE, GETDATE());
 	SELECT @DATE_END = CONVERT(DATE, DATEADD(year, 8, GETDATE()));
 
-	--SET IDENTITY_INSERT CS.dbo.Person ON;
-	--SELECT @ID_PERSON = MAX(p.id) + 1 FROM CS.dbo.Person as p;
-	--SET IDENTITY_INSERT CS.dbo.Person OFF;
-
-	--SELECT @ID_PERSON_COOP_INFO = MAX(p.id) + 1 FROM CS.dbo.PersonInfo as p;
+	--EXEC AddNewCommunicationChanel @operator;
+	--SELECT @ID_COMMUNICATION_CHANEL = tt.num_id_operator FROM CS.dbo.TmpTable as tt;
 	SELECT @ID_COMMUNICATION_CHANEL = 1;
 	SELECT @ID_CONFIG = 1;
-	--SELECT @ID_COMMUNICATION_CHANEL = MAX(p.id) + 1 FROM CS.dbo.CommunicationChanel as p;
-
-	--SELECT @ID_CAR = MAX(c.id) + 1 FROM CS.dbo.Car as c;
-	-- SELECT @ID_EQUIPMENT = MAX(eq.id) + 1 FROM CS.dbo.Equipment as eq;
-	--SELECT @ID_EQUIPMENT = MAX(e.id) + 1 FROM CS.dbo.Equipment as e;
-	SELECT @ID_MODELCAR = 0;
 
 	---------------------------------------
 	--SELECT @ID_MODELCAR = MAX(mc.id) + 1 FROM CS.dbo.ModelCar as mc;
@@ -67,6 +58,9 @@ BEGIN
 		SET @ID_MODELCAR = (SELECT SCOPE_IDENTITY());
 	END;
 	---------------------------------------
+
+	EXEC GetConfigID @car_brand;
+	SELECT @ID_CONFIG = tt.num_id_operator FROM CS.dbo.TmpTable as tt;
 
 	---------------------------------------
 	-- Add in Equipment table
@@ -103,13 +97,9 @@ BEGIN
 	SET @ID_CONTRACT = (SELECT SCOPE_IDENTITY());
 	---------------------------------------
 
-	--EXEC AddNewCommunicationChanel @operator;
-
 END;
 
-select * from cs.dbo.ConfigCar
-exec FormContract 'Bar', 'Baz', 'Man', 'email@mail.ru', 'BMW', 'X29', 'Bluebi', 'TT777T777', 'JKWNNGKWEJNGKWE', 'Yota';
-
+exec FormContract 'Bar', 'Baz', 'Man', 'email@mail.ru', 'Cadillac', 'X29', 'Bluebi', 'TT777T777', 'JKWNNGKWEJNGKWE', 'Yota';
 
 exec DeleteExtraCells;
 
