@@ -31,59 +31,85 @@ DECLARE
 	@ID_CAR INT,
 	@ID_EQUIPMENT INT,
 	@ID_MODELCAR INT,
+	@ID_CONFIG INT,
 
 	-- Communication Chanel
 	@ID_COMMUNICATION_CHANEL INT
 
 BEGIN
 
-	SELECT @ID_CONTRACT = MAX(c.id) + 1 FROM CS.dbo.Contracts as c;
 	SELECT @DATE_START = CONVERT(DATE, GETDATE());
 	SELECT @DATE_END = CONVERT(DATE, DATEADD(year, 8, GETDATE()));
 
-	SELECT @ID_PERSON = MAX(p.id) + 1 FROM CS.dbo.Person as p;
-	SELECT @ID_PERSON_COOP_INFO = MAX(p.id) + 1 FROM CS.dbo.PersonInfo as p;
-	SELECT @ID_COMMUNICATION_CHANEL = MAX(p.id) + 1 FROM CS.dbo.CommunicationChanel as p;
+	--SET IDENTITY_INSERT CS.dbo.Person ON;
+	--SELECT @ID_PERSON = MAX(p.id) + 1 FROM CS.dbo.Person as p;
+	--SET IDENTITY_INSERT CS.dbo.Person OFF;
 
-	SELECT @ID_CAR = MAX(c.id) + 1 FROM CS.dbo.Car as c;
+	--SELECT @ID_PERSON_COOP_INFO = MAX(p.id) + 1 FROM CS.dbo.PersonInfo as p;
+	SELECT @ID_COMMUNICATION_CHANEL = 1;
+	SELECT @ID_CONFIG = 1;
+	--SELECT @ID_COMMUNICATION_CHANEL = MAX(p.id) + 1 FROM CS.dbo.CommunicationChanel as p;
+
+	--SELECT @ID_CAR = MAX(c.id) + 1 FROM CS.dbo.Car as c;
 	-- SELECT @ID_EQUIPMENT = MAX(eq.id) + 1 FROM CS.dbo.Equipment as eq;
-	SELECT @ID_EQUIPMENT = MAX(e.id) + 1 FROM CS.dbo.Equipment as e;
+	--SELECT @ID_EQUIPMENT = MAX(e.id) + 1 FROM CS.dbo.Equipment as e;
 	SELECT @ID_MODELCAR = 0;
 
-	-- Add in Contracts table
-	INSERT INTO CS.dbo.Contracts(id, id_car, id_person, id_service, date_start, date_end)
-	VALUES (@ID_CONTRACT, @ID_CAR, @ID_PERSON, 0, @DATE_START, @DATE_END);
-
-	-- Add in Person table
-	INSERT INTO CS.dbo.Person(id, id_personinfo, pname, plastname, pgender)
-	VALUES (@ID_PERSON, @ID_PERSON_COOP_INFO, @person_name, @person_lastname, @person_gender);
-
-	-- Add in PersonInfo table
-	INSERT INTO CS.dbo.PersonInfo(id, paddress, pphone, pemail)
-	VALUES (@ID_PERSON_COOP_INFO, '', @person_phone, '');
-
-	SELECT @ID_MODELCAR = MAX(mc.id) + 1 FROM CS.dbo.ModelCar as mc;
-
+	---------------------------------------
+	--SELECT @ID_MODELCAR = MAX(mc.id) + 1 FROM CS.dbo.ModelCar as mc;
 	SELECT @ID_MODELCAR = mc.id FROM CS.dbo.ModelCar as mc
 	WHERE mc.mcbrand = @car_brand and mc.mcmodel = @car_model
 
 	IF NOT EXISTS (SELECT mc.id FROM CS.dbo.ModelCar as mc WHERE mc.id = @ID_MODELCAR)
-	INSERT INTO CS.dbo.ModelCar(id, mcbrand, mcmodel)
-	VALUES (@ID_MODELCAR, @car_brand, @car_model);
+	BEGIN
+		INSERT INTO CS.dbo.ModelCar(mcbrand, mcmodel)
+		VALUES (@car_brand, @car_model);
+		SET @ID_MODELCAR = (SELECT SCOPE_IDENTITY());
+	END;
+	---------------------------------------
 
+	---------------------------------------
 	-- Add in Equipment table
-	INSERT INTO CS.dbo.Equipment(id, id_communication_chanel, date_end_maintenance, emei)
-	VALUES (@ID_EQUIPMENT, @ID_COMMUNICATION_CHANEL, @DATE_END, @equipment_emei);
+	INSERT INTO CS.dbo.Equipment(id_communication_chanel, date_end_maintenance, emei)
+	VALUES (@ID_COMMUNICATION_CHANEL, @DATE_END, @equipment_emei);
+	SET @ID_EQUIPMENT = (SELECT SCOPE_IDENTITY());
+	---------------------------------------
 
-	EXEC AddNewCommunicationChanel @operator;
-
+	---------------------------------------
 	-- Add in Car table
-	INSERT INTO CS.dbo.Car(id, id_equipment, id_cmodel, ccolor, cnumber)
-	VALUES (@ID_CAR, @ID_EQUIPMENT, @ID_MODELCAR, @car_color, @car_number);
+	INSERT INTO CS.dbo.Car(id_equipment, id_cmodel, id_config, ccolor, cnumber)
+	VALUES (@ID_EQUIPMENT, @ID_MODELCAR, @ID_CONFIG, @car_color, @car_number);
+	SET @ID_CAR = (SELECT SCOPE_IDENTITY());
+	---------------------------------------
+
+	---------------------------------------
+	-- Add in PersonInfo table
+	INSERT INTO CS.dbo.PersonInfo(paddress, pphone, pemail)
+	VALUES ('', @person_phone, '');
+	SET @ID_PERSON_COOP_INFO = (SELECT SCOPE_IDENTITY());
+	---------------------------------------
+
+	---------------------------------------
+	-- Add in Person table
+	INSERT INTO CS.dbo.Person(id_personinfo, pname, plastname, pgender)
+	VALUES (@ID_PERSON_COOP_INFO, @person_name, @person_lastname, @person_gender);
+	SET @ID_PERSON = (SELECT SCOPE_IDENTITY());
+	---------------------------------------
+
+	---------------------------------------
+	-- Add in Contracts table
+	INSERT INTO CS.dbo.Contracts(id_car, id_person, id_service, date_start, date_end)
+	VALUES (@ID_CAR, @ID_PERSON, 0, @DATE_START, @DATE_END);
+	SET @ID_CONTRACT = (SELECT SCOPE_IDENTITY());
+	---------------------------------------
+
+	--EXEC AddNewCommunicationChanel @operator;
 
 END;
 
-exec FormContract 'Kiram', 'Abdulelam', 'Black', 'email@mail.ru', 'BMW', 'X9', 'Blueaa', 'TT777T777', 'JKWNNGKWEJNGKWE', 'Yota';
+select * from cs.dbo.ConfigCar
+exec FormContract 'Bar', 'Baz', 'Man', 'email@mail.ru', 'BMW', 'X29', 'Bluebi', 'TT777T777', 'JKWNNGKWEJNGKWE', 'Yota';
+
 
 exec DeleteExtraCells;
 
