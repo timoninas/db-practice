@@ -54,13 +54,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigCar.cs" />
     <Compile Include="ControllerForm1.cs" />
+    <Compile Include="ControllerFormAuth.cs" />
     <Compile Include="CS_DB.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConfigCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfigCar.Designer.cs">
+      <DependentUpon>FormConfigCar.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTechView.cs">
       <SubType>Form</SubType>
@@ -79,6 +87,9 @@
     <Compile Include="StatusEquipment.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfigCar.resx">
+      <DependentUpon>FormConfigCar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTechView.resx">
       <DependentUpon>FormTechView.cs</DependentUpon>
