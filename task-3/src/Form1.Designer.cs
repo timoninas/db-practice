@@ -83,6 +83,17 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.textForCarApp = new System.Windows.Forms.TextBox();
+            this.buttonForCarApp = new System.Windows.Forms.Button();
+            this.listBoxForCarApp = new System.Windows.Forms.ListBox();
+            this.dataConfigCar = new System.Windows.Forms.DataGridView();
+            this.brand_car = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.model_car = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.color_car = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number__car = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_config = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.json_config = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataCar)).BeginInit();
@@ -92,6 +103,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataEquipmentMaintenance)).BeginInit();
             this.mainTabControll.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataConfigCar)).BeginInit();
             this.SuspendLayout();
             // 
             // IDTextBox
@@ -528,6 +541,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataConfigCar);
+            this.tabPage2.Controls.Add(this.listBoxForCarApp);
+            this.tabPage2.Controls.Add(this.buttonForCarApp);
+            this.tabPage2.Controls.Add(this.textForCarApp);
+            this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -545,6 +563,90 @@
             // 
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(863, 12);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(92, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "ID пользователя";
+            // 
+            // textForCarApp
+            // 
+            this.textForCarApp.Location = new System.Drawing.Point(866, 31);
+            this.textForCarApp.Name = "textForCarApp";
+            this.textForCarApp.Size = new System.Drawing.Size(120, 20);
+            this.textForCarApp.TabIndex = 1;
+            // 
+            // buttonForCarApp
+            // 
+            this.buttonForCarApp.Location = new System.Drawing.Point(866, 57);
+            this.buttonForCarApp.Name = "buttonForCarApp";
+            this.buttonForCarApp.Size = new System.Drawing.Size(120, 23);
+            this.buttonForCarApp.TabIndex = 2;
+            this.buttonForCarApp.Text = "Получить данные";
+            this.buttonForCarApp.UseVisualStyleBackColor = true;
+            this.buttonForCarApp.Click += new System.EventHandler(this.buttonForCarApp_Click);
+            // 
+            // listBoxForCarApp
+            // 
+            this.listBoxForCarApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBoxForCarApp.FormattingEnabled = true;
+            this.listBoxForCarApp.ItemHeight = 20;
+            this.listBoxForCarApp.Location = new System.Drawing.Point(9, 10);
+            this.listBoxForCarApp.Name = "listBoxForCarApp";
+            this.listBoxForCarApp.Size = new System.Drawing.Size(848, 144);
+            this.listBoxForCarApp.TabIndex = 3;
+            this.listBoxForCarApp.SelectedIndexChanged += new System.EventHandler(this.listBoxForCarApp_SelectedIndexChanged);
+            // 
+            // dataConfigCar
+            // 
+            this.dataConfigCar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataConfigCar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.brand_car,
+            this.model_car,
+            this.color_car,
+            this.number__car,
+            this.name_config,
+            this.json_config});
+            this.dataConfigCar.Location = new System.Drawing.Point(9, 160);
+            this.dataConfigCar.Name = "dataConfigCar";
+            this.dataConfigCar.Size = new System.Drawing.Size(848, 554);
+            this.dataConfigCar.TabIndex = 4;
+            this.dataConfigCar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataConfigCar_CellContentClick);
+            // 
+            // brand_car
+            // 
+            this.brand_car.HeaderText = "Бренд";
+            this.brand_car.Name = "brand_car";
+            // 
+            // model_car
+            // 
+            this.model_car.HeaderText = "Модель";
+            this.model_car.Name = "model_car";
+            // 
+            // color_car
+            // 
+            this.color_car.HeaderText = "Цвет";
+            this.color_car.Name = "color_car";
+            // 
+            // number__car
+            // 
+            this.number__car.HeaderText = "Номер";
+            this.number__car.Name = "number__car";
+            // 
+            // name_config
+            // 
+            this.name_config.HeaderText = "Конфиг";
+            this.name_config.Name = "name_config";
+            // 
+            // json_config
+            // 
+            this.json_config.HeaderText = "Конфиг js";
+            this.json_config.Name = "json_config";
+            this.json_config.Width = 300;
             // 
             // Form1
             // 
@@ -565,6 +667,9 @@
             this.mainTabControll.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataConfigCar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -624,6 +729,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn color;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ListBox listBoxForCarApp;
+        private System.Windows.Forms.Button buttonForCarApp;
+        private System.Windows.Forms.TextBox textForCarApp;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView dataConfigCar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brand_car;
+        private System.Windows.Forms.DataGridViewTextBoxColumn model_car;
+        private System.Windows.Forms.DataGridViewTextBoxColumn color_car;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number__car;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_config;
+        private System.Windows.Forms.DataGridViewTextBoxColumn json_config;
     }
 }
 

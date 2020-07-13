@@ -19,7 +19,8 @@ namespace CS_operator
         public Form1(String username, String password)
         {
             InitializeComponent();
-            
+
+            listBoxForCarApp.ItemHeight = 255;
             errorLabel.Text = "";
             usernameLabel.Text = username;
             passwordLabel.Text = password;
@@ -109,24 +110,6 @@ namespace CS_operator
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void logoutButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -148,6 +131,75 @@ namespace CS_operator
                 nextWindow.ShowDialog();
             }
             errorLabel.Text = e.ColumnIndex.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonForCarApp_Click(object sender, EventArgs e)
+        {
+            string string_ID = textForCarApp.Text;
+            int ID;
+            if (int.TryParse(string_ID, out ID))
+            {
+                dataConfigCar.Rows.Clear();
+                listBoxForCarApp.Items.Clear();
+                List<string> dataCars = controller.GetConfigByID(ID);
+
+                if (dataCars.Count == 0)
+                {
+                    MessageBox.Show("У клиента нет машин!");
+                }
+                else
+                {
+                    int index = 0;
+                    for (int i = 0; i < dataCars.Count;)
+                    {
+                        string line = dataCars[i] + " " + dataCars[i + 1] + " " + dataCars[i + 2] + " " + dataCars[i + 5];
+                        listBoxForCarApp.Items.Insert(index, line);
+                        dataConfigCar.Rows.Add(dataCars[i], dataCars[i+1], dataCars[i+2], dataCars[i+3], dataCars[i+4], dataCars[i+5]);
+                        index += 1;
+                        i += 6;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Неправильно ввели данные");
+            }
+        }
+
+        private void listBoxForCarApp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = listBoxForCarApp.SelectedIndex;
+            MessageBox.Show(listBoxForCarApp.Items[selectedIndex].ToString());
+        }
+
+        private void dataConfigCar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numberLineInTable = e.RowIndex;
+            
+            string json_message = dataConfigCar[5, numberLineInTable].Value.ToString();
+            
+            ConfigCar cc = JsonConvert.DeserializeObject<ConfigCar>(json_message);
+
+            FormConfigCar nextWindow = new FormConfigCar(cc);
+            nextWindow.ShowDialog();
         }
     }
 }
