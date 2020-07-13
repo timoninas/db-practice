@@ -26,3 +26,9 @@
 <p align="center">
   <img src="https://github.com/timoninas/db-practice/blob/master/img/detail_tech.png"/>
 </p>
+
+## Страница с конфгом машины пользователя
+
+<p align="center">
+  <img src="https://github.com/timoninas/db-practice/blob/master/img/main_2.png"/>
+</p>
