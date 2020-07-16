@@ -32,3 +32,9 @@
 <p align="center">
   <img src="https://github.com/timoninas/db-practice/blob/master/img/main_2.png"/>
 </p>
+
+## Страница с детальной конфигурацией машины
+
+<p align="center">
+  <img src="https://github.com/timoninas/db-practice/blob/master/img/config_car.png"/>
+</p>
