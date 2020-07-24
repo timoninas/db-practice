@@ -2,6 +2,8 @@
 
 # Базы данных; Производственная практика; 6 семестр
 
+## [Отчет](https://github.com/timoninas/db-practice/blob/master/report/main.pdf)
+
 <p align="center">
   <img src="https://github.com/timoninas/db-practice/blob/master/model/bd_cs.png"/>
 </p>
