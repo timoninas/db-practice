@@ -133,38 +133,91 @@ Faker - это библиотека Python, которая генерирует 
 \vspace{0.1cm}
 C Sharp является объектно-ориентированным языком, но поддерживает также и компонентно-ориентированное программирование. Разработка современных приложений все больше тяготеет к созданию программных компонентов в форме автономных и самоописательных пакетов, реализующих отдельные функциональные возможности. Главная особенность таких компонентов в том, что они представляют собой модель программирования со свойствами, методами и событиями. У них есть атрибуты, предоставляющие декларативные сведения о компоненте. Они включают в себя собственную документацию. C Sharp предоставляет языковые конструкции, непосредственно поддерживающие такую концепцию работы. Благодаря этому C Sharp подходит для создания и применения программных компонентов\cite{microsoft-csharp}.
 
-\begin{lstlisting}[caption=Генерация фейковых адресов, label = list:pythonFakerAddresses]
-	namespace CS_operator
+\vspace{0.1cm}
+На листинге \ref{list:csDataBase} представлен класс, отвечающий за подключение к базе данных MS SQL Server.
+
+\begin{lstlisting}[caption=Подключение к базе данных, label = list:csDataBase]
+	class CS_DB
 	{
-		public partial class FormAuth : Form
+		private SqlConnection connection = new SqlConnection("Data Source=4D97\\MSSSQLSERVER;Initial Catalog=CS;Integrated Security=True");
+	
+		public void openConnection()
 		{
-			ControllerFormAuth controller;
-			public FormAuth()
+			if (connection.State == ConnectionState.Closed)
 			{
-				InitializeComponent();
-			
-				this.controller = new ControllerFormAuth();
-			}
-		
-			private void loginButton_Click(object sender, EventArgs e)
+				connection.Open();
+			}    
+		}
+	
+		public void closeConnection()
+		{
+			if (connection.State == ConnectionState.Open)
 			{
-			
-				if (controller.IsLogged(usernameTextBox.Text, passwordTextBox.Text))
-				{
-					this.Hide();
-					Form1 nextWindow = new Form1(usernameTextBox.Text, passwordTextBox.Text);
-					nextWindow.ShowDialog();
-				}
-				else
-				{
-					MessageBox.Show("This operator does not exist");
-				}
+				connection.Close();
 			}
+		}
+	
+		public SqlConnection getConnection()
+		{
+			return connection;
 		}
 	}
 \end{lstlisting}
 
 \subsection{Windows Forms}
+
+Windows Forms позволяет разрабатывать интеллектуальные клиенты. Интеллектуальный клиент — это приложение с полнофункциональным графическим интерфейсом, простое в развертывании и обновлении, способное работать при наличии или отсутствии подключения к Интернету и использующее более безопасный доступ к ресурсам на локальном компьютере по сравнению с традиционными приложениями Windows \cite{microsoft-wondowsforms}.
+
+Пример создание формы через Windows Forms API представлен на листинге \ref{list:csCreateForm}. На рисунке \ref{img:auth}, \ref{img:main_1}, \ref{img:main_2} представлены форма авторизации оператора, главная форма с информацией о пользователе, форма с информацией о машинах конкретного пользователя соответственно. 
+
+\begin{lstlisting}[caption=Пример создания формы в программе оператора, label = list:csCreateForm]
+	public partial class FormAuth : Form
+	{
+		ControllerFormAuth controller;
+		public FormAuth()
+		{
+			InitializeComponent();
+	
+			this.controller = new ControllerFormAuth();
+		}
+	
+		private void loginButton_Click(object sender, EventArgs e)
+		{
+	
+			if (controller.IsLogged(usernameTextBox.Text, passwordTextBox.Text))
+			{
+				this.Hide();
+				Form1 nextWindow = new Form1(usernameTextBox.Text, passwordTextBox.Text);
+				nextWindow.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("This operator does not exist");
+			}
+		}
+	}
+\end{lstlisting}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.9]{img/auth.png}
+	\caption{Форма авторизации}
+	\label{img:auth}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{img/main_1.png}
+	\caption{Форма со всей информацие о пользователе}
+	\label{img:main_1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{img/main_2.png}
+	\caption{Форма с информацией об машине пользователя}
+	\label{img:main_2}
+\end{figure}
 
 \subsection{Entity Framework}
 
