@@ -7,7 +7,7 @@ f = open('/Users/antontimonin/Desktop/Практика/data/MobileInfo1.txt', 'w
 
 diaposon = 250
 
-brands = ['Teslt', 'BMW', 'Ferrari', 'Ford', 'Porsche', 'Honda', 'Lamborgini', 'Toyota',
+brands = ['Tesla', 'BMW', 'Ferrari', 'Ford', 'Porsche', 'Honda', 'Lamborgini', 'Toyota',
 'Bentley', 'Maserati', 'Audi', 'Jeep', 'Subaru', 'Cadillac', 'Chrysler', 'Mazda',
 'Jaguar', 'Ford Mustang']
 

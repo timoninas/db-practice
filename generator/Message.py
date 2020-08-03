@@ -8,6 +8,8 @@ f = open('/Users/antontimonin/Desktop/Практика/data/Message1.txt', 'w', 
 
 diaposon = 4500
 
+equipment_ids = []
+
 status_messages = ['Car force opened', 'Car was knocked', 'Car was knocked', 'Car was yanked by the handle', 'Hit the wheels of a car',
 'The trunk was broken into']
 
@@ -20,8 +22,13 @@ def formateDate(year):
 for i in range(diaposon):
     id = str(i+1)
     f.write(id + ';')
-    f.write(str(myFaker.pyint(min_value=1, max_value=450, step=1)) + ';')
-
+    while(1):
+        number = myFaker.pyint(min_value=1, max_value=350, step=1)
+        if (number not in equipment_ids or len(equipment_ids) >= 350):
+            equipment_ids.append(number)
+            f.write(str(number) + ';')
+            break
+        
     day = myFaker.pyint(min_value=1, max_value=28, step=1)
     month = myFaker.pyint(min_value=1, max_value=12, step=1)
     year = myFaker.pyint(min_value=2015, max_value=2020, step=1)

@@ -5,7 +5,9 @@ myFaker = Faker('en_US')
 
 f = open('/Users/antontimonin/Desktop/Практика/data/Equipment1.txt', 'w', encoding='utf-8')
 
-diaposon = 450
+diaposon = 350
+
+communication_chanel_ids = []
 
 def formateDate(year):
     if year >= 0 and year < 10:
@@ -15,7 +17,12 @@ def formateDate(year):
 
 for i in range(diaposon):
     f.write(str(i+1) + ';')
-    f.write(str(myFaker.pyint(min_value=1, max_value=20, step=1)) + ';')
+    while(1):
+        number = myFaker.pyint(min_value=1, max_value=20, step=1)
+        if (number not in communication_chanel_ids or len(communication_chanel_ids) >= 20):
+            communication_chanel_ids.append(number)
+            f.write(str(number) + ';')
+            break
 
     emei = ""
     for i in range (20):

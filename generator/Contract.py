@@ -17,6 +17,10 @@ f = open('/Users/antontimonin/Desktop/Практика/data/Contract1.txt', 'w')
 
 diaposon = 1001
 
+card_ids = []
+person_ids = []
+service_ids = []
+
 def formateDate(year):
     if year >= 0 and year < 10:
         return "0" + str(year)
@@ -25,9 +29,26 @@ def formateDate(year):
 
 for i in range(diaposon):
     f.write(str(i+1) + ';') #contract id
-    f.write(str(myFaker.pyint(min_value=1, max_value=350, step=1)) + ';') #car id
-    f.write(str(myFaker.pyint(min_value=1, max_value=250, step=1)) + ';') #person id
-    f.write(str(myFaker.pyint(min_value=1, max_value=15, step=1)) + ';') #service id
+    while (1): 
+        number = myFaker.pyint(min_value=1, max_value=350, step=1)
+        if (number not in card_ids or len(card_ids) >= 350):
+            card_ids.append(number)
+            f.write(str(number) + ';') #car id
+            break
+
+    while (1): 
+        number = myFaker.pyint(min_value=1, max_value=250, step=1)
+        if (number not in person_ids or len(person_ids) >= 250):
+            person_ids.append(number)
+            f.write(str(number) + ';') #person id
+            break
+
+    while (1): 
+        number = myFaker.pyint(min_value=1, max_value=15, step=1)
+        if (number not in service_ids or len(service_ids) >= 15):
+            service_ids.append(number)
+            f.write(str(number) + ';') #service id
+            break  
 
     day1 = myFaker.pyint(min_value=1, max_value=28, step=1)
     month1 = myFaker.pyint(min_value=1, max_value=12, step=1)

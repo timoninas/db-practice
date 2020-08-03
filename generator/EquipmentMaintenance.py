@@ -8,6 +8,8 @@ f = open('/Users/antontimonin/Desktop/Практика/data/EquipmentMaintenance
 
 diaposon = 2500
 
+equipment_ids = []
+
 messages_maintenance = ['Checking the machine equipment', 
 'Incomplete technical inspection of the machine', 
 'Checking the machine for external defects', 
@@ -22,7 +24,14 @@ def formateDate(year):
 
 for i in range(diaposon):
     f.write(str(i+1) + ';')
-    f.write(str(myFaker.pyint(min_value=1, max_value=450, step=1)) + ';')
+
+    while (1):
+        number = myFaker.pyint(min_value=1, max_value=350, step=1)
+        if (number not in equipment_ids or len(equipment_ids) >= 350):
+            equipment_ids.append(number)
+            f.write(str(number) + ';')
+            break
+
     f.write(str(myFaker.pyint(min_value=1, max_value=15, step=1)) + ';')
 
     day = myFaker.pyint(min_value=1, max_value=28, step=1)

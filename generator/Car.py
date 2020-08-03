@@ -25,7 +25,7 @@ configs_id = {'1': 24,
 for i in range(diaposon):
     f.write(str(i+1) + ';')
     while(1):
-        id_equip = myFaker.pyint(min_value=1, max_value=451, step=1)
+        id_equip = myFaker.pyint(min_value=1, max_value=350, step=1)
         if id_equip not in id_equipment:
             id_equipment.append(id_equip)
             f.write(str(id_equip) + ';')
