@@ -8,6 +8,18 @@
   <img src="https://github.com/timoninas/db-practice/blob/master/model/bd_cs.png"/>
 </p>
 
+## Диаграмма CS1 в MS SQL
+
+<p align="center">
+  <img src="https://github.com/timoninas/db-practice/blob/master/img/CS1_dbo.png"/>
+</p>
+
+## Диаграмма CS2 в MS SQL
+
+<p align="center">
+  <img src="https://github.com/timoninas/db-practice/blob/master/img/CS2_dbo.png"/>
+</p>
+
 
 # Приложение оператора
 
