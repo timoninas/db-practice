@@ -99,10 +99,11 @@ BEGIN
 
 END;
 
-exec FormContract 'Bar', 'Baz', 'Man', 'email@mail.ru', 'Cadillac', 'X29', 'Bluebi', 'TT777T777', 'JKWNNGKWEJNGKWE', 'Yota';
+exec FormContract 'Bar', 'Baz', 'Man', 'email@mail.ru', 'BMW', 'X1', 'Bluebi', 'TT777T777', 'JKWNNGKWEJNGKWE', 'Yota';
 
 exec DeleteExtraCells;
 
+SELECT * FROM CS.dbo.ConfigCar;
 SELECT * from CS.dbo.ModelCar;
 SELECT * FROM CS.dbo.Car;
 SELECT * FROM CS.dbo.Contracts;
@@ -132,3 +133,4 @@ BEGIN
 	DELETE FROM CS.dbo.Car
 	WHERE CS.dbo.Car.id > 349;
 END;
+

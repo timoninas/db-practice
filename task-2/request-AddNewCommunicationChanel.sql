@@ -44,8 +44,6 @@ BEGIN
 
 	INSERT INTO CS.dbo.TmpTable (num_id_operator)
 	VALUES (@ID_COMMUNICATION_CHANEL);
-
-	SELECT @ID_COMMUNICATION_CHANEL;
 END;
 
 EXEC AddNewCommunicationChanel 'Yota';
@@ -53,3 +51,20 @@ EXEC AddNewCommunicationChanel 'Yota';
 SELECT * from CS.dbo.Equipment;
 SELECT * from CS.dbo.CommunicationChanel;
 SELECT * FROM CS.dbo.TelecomOperator;
+SELECT * FROM CS.dbo.TmpTable;
+
+
+drop procedure TestPr;
+
+CREATE PROCEDURE TestPr(@parametr VARCHAR(100)) AS
+DECLARE 
+	@string varchar(100);
+BEGIN
+
+	SELECT @string = LOWER(@parametr);
+
+	SELECT @string;
+	
+END;
+
+EXEC TestPr 'lOlkKKeEk';
